@@ -24,8 +24,8 @@ GIS.lab creates it's own network. By default it is in range ``192.168.50.0/24``.
 If this range already exists in LAN where GIS.lab is going to be deployed, 
 it is required to change it using ``GISLAB_NETWORK`` configuration variable.
 
-See :ref:`Configuration section <configuration-section>` for information 
-about changing GIS.lab configuration. 
+See :ref:`Configuration section <configuration-section>` for more information 
+about configuration. 
 
 .. important:: |imp| Without changing network configuration variable IP 
    conflicts may occur. 

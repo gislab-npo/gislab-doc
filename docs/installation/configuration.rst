@@ -1,5 +1,3 @@
-.. _configuration-section:
- 
 *************
 How to start
 *************
@@ -89,6 +87,8 @@ and eventually package should be installed. See instructions below.
    
       $ vagrant box add precise-canonical http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box
 
+.. _configuration-section:
+
 ===============
 Configuration
 ===============
@@ -130,157 +130,8 @@ host name specified in inventory file.
 
 File ``gislab_vagrant`` will be loaded automatically by Vagrant 
 without need to manually :ref:`create the Ansible inventory file <create-ansible-inventory-file>`. 
-Example configuration in ``gislab_vagrant`` or ``<name-of-gislab-unit>``
-file is shown below.
 
-.. code-block:: sh
-   :emphasize-lines: 5
+.. tip:: |tip| See :ref:`practical example <example-configuration>` of 
+         configuration file.
 
-   GISLAB_ADMIN_FIRST_NAME: Ludmila
-   GISLAB_ADMIN_SURNAME: Furtkevicova
-   GISLAB_ADMIN_EMAIL: ludmilafurtkevicov@gmail.com
-
-   GISLAB_NETWORK: 192.168.50
-   GISLAB_TIMEZONE: Europe/Rome
-   GISLAB_DNS_SERVERS:
-    - 10.234.10.10
-    - 8.8.8.8
-   
-   GISLAB_CLIENT_ARCHITECTURE: amd64
-   GISLAB_CLIENT_LANGUAGES:
-    - en
-    - sk
-    - it
-   
-   GISLAB_CLIENT_KEYBOARDS:
-     - layout: en
-       variant: qwerty
-     - layout: sk
-       variant: qwerty
-     - layout: it
-       variant: qwerty
-   
-   GISLAB_CLIENT_OWS_WORKER_MIN_MEMORY: 4000
-
-Let's see practical example of configuration with 
-some changes related to GIS.lab network and client keyboards in virtual mode.
-Variables ``GISLAB_NETWORK`` and ``GISLAB_CLIENT_KEYBOARDS`` in ``gislab_vagrant``
-file will be different. Results after the successful installation for both cases 
-are in figure :num:`#config-virtual`.
-
-.. tip:: |tip| See :ref:`Installation in Virtual Mode <installation-virtual>`
-   section for more details about the steps or just use ``vagrant provision``
-   command which is used to install and configure the machine Vagrant is managing .
-
-.. code:: sh
-
-   file gislab_vagrant 'A'                        file gislab_vagrant 'B'
-   -----------------------                        ----------------------- 
-   GISLAB_NETWORK: 192.168.50                     GISLAB_NETWORK: 192.168.30
-                                 
-   GISLAB_CLIENT_KEYBOARDS:                       GISLAB_CLIENT_KEYBOARDS:
-   - layout: sk                                   - layout: it
-     variant: qwerty                                variant: qwerty
-
-.. _config-virtual:
-
-.. figure:: ../img/installation/config_virtual.png
-   :align: center
-   :width: 750
-
-   Two different results using different Vagrant configuration file.
-
-Fourth number of server's IP address will always be ``5`` and the first client's 
-IP address will always terminate with ``50``. For left case of figure :num:`#config-virtual` 
-these addresses would look like ``192.168.50.5`` and ``192.168.50.50``.
-
-.. note:: |note| This information is useful in manual GIS.lab server selection  
-          using :ref:`HTTP boot <http-boot-virtual>` when server's IP address is required.
-
-=====================
-Network configuration
-=====================
-
-This section tries to collect documentation to some of the most common
-network configurations used for GIS.lab deployment. We assume, that in
-all cases, machines are connected to Ethernet network with ``Gigabit switch`` 
-and at least ``CAT5 e`` Ethernet cables.
-
-------------
-Virtual Mode
-------------
-
-This part of documentation assumes that GIS.lab server is installed on **Linux** 
-laptop in **VirtualBox** virtual machine using **Vagrant** as it is documented in 
-:ref:`Virtual Mode <installation-virtual>` installation section.
-
-.. rubric:: Existing LAN with DHCP server
-
-GIS.lab is deployed in existing LAN ``192.168.1.0/24`` which already
-contains DHCP server and many non GIS.lab machines and network is
-connected to Internet.
-
-*Configuration*
-
-* Laptop - wired adapter: automatic IP address assignment (Network Manager)
-* Laptop - wireless adapter: disabled (Network Manager)
-* ``GISLAB_NETWORK``: ``192.168.50``
-
-.. rubric:: Separate network
-
-GIS.lab is deployed in separate network, specially created by GIS.lab
-vendor, where only GIS.lab machines are connected. Internet access is
-provided by host laptop's WiFi connection and it is connected to GIS.lab
-network via Ethernet cable. Network contains only GIS.lab machines.
-
-*Configuration*
-
-* Laptop - wired adapter: static IP address ``192.168.5.1``, mask 
-  ``255.255.255.0``, gateway ``0.0.0.0``, DNS ``8.8.8.8`` (Network Manager)
-* Laptop - wireless adapter: connected to Internet (Network Manager)
-* ``GISLAB_NETWORK``: ``192.168.50``
-
--------------
-Physical Mode
--------------
-
-This section assumes that GIS.lab Unit machine is installed as it is 
-documented in `Physical Mode <installation-physical>`_ installation part.
-
-.. rubric:: Existing LAN with DHCP server
-
-GIS.lab Unit is deployed in existing LAN ``192.168.1.0/24`` which already
-contains DHCP server and many non GIS.lab machines and network is
-connected to Internet.
-
-*Configuration* 
-
-* ``GISLAB_NETWORK``: ``192.168.50``
-
-.. rubric:: Separate network
-
-GIS.lab Unit is deployed in separate network, specially created by
-**GIS.lab vendor**, where only GIS.lab machines are connected. Internet
-access is provided by laptop running Linux, which is connected to
-Internet via WiFi and to GIS.lab network via Ethernet cable. Network
-contains only GIS.lab machines.
-
-In this case, it is required to change GIS.lab Unit's wired network
-adapter configuration to **static IP address** and allow connection
-forwarding on laptop.
-
-*Configuration* 
-
-* Laptop - wired adapter: static IP address ``192.168.5.1``, mask 
-  ``255.255.255.0``, gateway ``0.0.0.0``, DNS ``8.8.8.8`` (Network Manager)
-* Laptop - wireless adapter: connected to Internet (Network Manager)
-* ``GISLAB_NETWORK``: ``192.168.50``
-* ``GISLAB_SERVER_INTEGRATION_FALLBACK_IP_ADDRESS``: ``192.168.5.5``
-* ``GISLAB_SERVER_INTEGRATION_FALLBACK_GATEWAY``: ``192.168.5.1``
-
-To allow using laptop as Internet gateway, run following commands on laptop.
-
-.. code::
-
-   $ sudo sysctl -w net.ipv4.ip_forward=1
-   $ sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+.. seealso:: |see| :ref:`Network configuration <network-configuration>`
