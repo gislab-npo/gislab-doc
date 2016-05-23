@@ -167,8 +167,6 @@ using ``gislab-adduser`` command.
 With ``gislab-listusers`` list of all GIS.lab users is displayed, see example below.
 
 .. code:: sh
-
-.. code::
 	
    $ sudo gislab-listusers | grep uid:
    uid: uid=gislab
