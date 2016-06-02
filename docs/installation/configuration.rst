@@ -13,8 +13,12 @@ Installation of requirements
 By far the easiest way of getting Git installed and ready to use is by using 
 default repositories. This is the fastest method, but the version may 
 be older than the newest version. For GIS.lab version from official repositories 
-should be normally sufficient. At firt, ``apt`` package management tools can be 
-used to update local package index. Afterwards, Git can be downloaded and installed.
+should be normally sufficient.
+
+The instructions below are valid for Debian/Ubuntu operating
+systems. At first, ``apt`` package management tools can be used to
+update local package index. Afterwards, Git can be downloaded and
+installed.
 
 .. code:: sh
 

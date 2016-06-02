@@ -6,8 +6,8 @@ Let's get started
 
 You may be coming to :ref:`GIS.lab <about>` from various operating systems, 
 but we expect that you are probably 
-familiar with browsing the web, writing documents, sending emails and doing other 
-jobrelated tasks with your computer. Whether you are somewhat experienced or 
+familiar with browsing the web, writing documents, sending emails and doing other
+job related tasks with your computer. Whether you are somewhat experienced or
 completely new to computers, this documentation should be very useful for you.
 Of course, the more experience you have, the more quickly you will learn. 
 
