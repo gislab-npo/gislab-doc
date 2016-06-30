@@ -126,13 +126,14 @@ automation language, self-documenting syntax, agent-less execution,
 idempotent modules, templates, support for cloud providers AWS, GCE, Digital 
 Ocean, Azure, and the like.
 
-Virtual machine deployment is enabled by 
-**Vagrant** and **VirtualBox**. Client boot service is 
-`Linux Terminal Server <http://www.ltsp.org/>`_
-fat client or own solution. It uses OGC Web Service Common (OWS) services 
-load balancing, QGIS Desktop and Server as 
-GIS.lab Desktop including own GIS.lab Web app, own GIS software packaging and 
-GRASS as processing backend under QGIS Processing plugin and WPS. 
+Virtual machine deployment is enabled by **Vagrant** and
+**VirtualBox**. Client boot service is `Linux Terminal Server
+<http://www.ltsp.org/>`_ fat client or own solution. It uses OGC Web
+Service Common (OWS) services load balancing, `QGIS
+<http://www.qgis.org>`_ Desktop and Server as GIS.lab Desktop
+including own GIS.lab Web app, own GIS software packaging and `GRASS
+<http://grass.osgeo.org>`_ as processing backend under QGIS Processing
+plugin and WPS.
 
 Magic command is called ``vagrant up`` and orders to automatically 
 provision GIS.lab server inside of virtual machine on the host computer. 
@@ -276,8 +277,8 @@ The main purpose is QGIS projects publishing on web.
 Is GIS.lab similar to OSGeo Live? 
 =================================
 
-GIS.lab is automatic deployment of GIS infrastructure - more or less opposite to 
-OSGeo Live.
+GIS.lab is automatic deployment of GIS infrastructure - more or less
+opposite to `OSGeo Live <https://live.osgeo.org>`_.
 
 OSGeo-Live is a self-contained bootable DVD, USB thumb drive or
 Virtual Machine based on Lubuntu that allows user to try a wide
