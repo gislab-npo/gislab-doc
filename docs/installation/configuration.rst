@@ -49,13 +49,6 @@ repository and installing it by typing ordinary commands.
    $ sudo apt-get update
    $ sudo apt-get install ansible
 
-.. tip:: |tip| Run following code to get **Ansible 1.9.3**
-
-   .. code:: sh
-
-      $ sudo apt-get install python-pip python-dev
-      $ sudo pip install ansible==1.9.3
-
 .. _vb-installation:
 
 .. rubric::  VirtualBox installation

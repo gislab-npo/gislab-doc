@@ -60,6 +60,8 @@ command from source code root directory.
    ==> gislab-web: Machine already provisioned. Run `vagrant provision` or use the `--provision`
    ==> gislab-web: flag to force provisioning. Provisioners marked to run always will still run.
 
+.. note:: |note| Minimum version of Ansible is ``2+``, see :ref:`Ansible installation <ansible-installation>`. 
+
 .. note:: |note| To speed up provisioning using **Apt proxy server**, set 
    ``APT_PROXY`` variable before running above command like 
    ``$ export APT_PROXY=http://192.168.99.118:3142``. 
