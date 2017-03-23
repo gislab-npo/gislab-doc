@@ -16,7 +16,7 @@ import sys
 import os
 import sphinx_rtd_theme
 
-sys.path.append(os.path.abspath('.extensions'))
+sys.path.append(os.path.abspath('_extensions'))
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo',
               'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.ifconfig',
@@ -127,7 +127,7 @@ html_favicon = 'img/logo.ico'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['.static']
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
