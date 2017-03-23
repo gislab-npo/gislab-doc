@@ -35,7 +35,6 @@ Contents
 
    installation/index
    client-layout/index
-   gislab-web/index
    practice/practice
    general/workshop
    general/datasets
