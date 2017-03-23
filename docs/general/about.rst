@@ -130,7 +130,7 @@ Virtual machine deployment is enabled by **Vagrant** and
 **VirtualBox**. Client boot service is `Linux Terminal Server
 <http://www.ltsp.org/>`_ fat client or own solution. It uses OGC Web
 Service Common (OWS) services load balancing, `QGIS
-<http://www.qgis.org>`_ Desktop and Server as GIS.lab Desktop
+<http://www.qgis.org>`__ Desktop and Server as GIS.lab Desktop
 including own GIS.lab Web app, own GIS software packaging and `GRASS
 <http://grass.osgeo.org>`_ as processing backend under QGIS Processing
 plugin and WPS.
@@ -261,7 +261,7 @@ What is GIS.lab Web?
 
 GIS.lab Web is a **web application** built on top of modern technologies with 
 very modern user interface optimized also for mobile devices. It stands on the 
-shoulders of `QGIS <http://qgis.org/en/site/>`_ desktop and server software.
+shoulders of `QGIS <http://qgis.org>`__ desktop and server software.
 
 The main purpose is QGIS projects publishing on web. 
 
