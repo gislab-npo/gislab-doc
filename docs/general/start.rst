@@ -11,11 +11,11 @@ job related tasks with your computer. Whether you are somewhat experienced or
 completely new to computers, this documentation should be very useful for you.
 Of course, the more experience you have, the more quickly you will learn. 
 
-In general, this documentation does not assume any computer experience on your 
-part. We try to explain in detail what :ref:`GIS.lab Desktop<gislab>`, 
-:ref:`GIS.lab Web <gislab-web>` and GIS.lab Mobile are. 
-We even tell you how to install 
-and how to use every of these pieces in the most efficient way. 
+In general, this documentation does not assume any computer experience
+on your part. We try to explain in detail what :ref:`GIS.lab
+Desktop<gislab>`, :ref:`Gisquick <gisquick>` are. We even tell you how
+to install and how to use every of these pieces in the most efficient
+way.
 
 .. _desktop-web-mobile:
 
@@ -23,7 +23,7 @@ and how to use every of these pieces in the most efficient way.
    :align: center
    :width: 450
 
-   GIS.lab Desktop, GIS.lab Web and GIS.lab Mobile interface.
+   GIS.lab Desktop, Gisquick Web and Mobile interfaces.
 
 Firstly, there is a section related to introduction called 
 :ref:`Learning about the pieces <about>`. 
@@ -32,7 +32,7 @@ them and go straight away to :ref:`GIS.lab Installation <gislab-installation>`.
 Section :ref:`Client Desktop layout <layout>` relates to GIS.lab client
 environment with GIS and no GIS applications.
 To get to know about QGIS projects publishing on web, see 
-:ref:`GIS.lab Web <gislab-web>` part.
+:ref:`Gisquick <gisquick>` part.
 Chapters dedicated to provide practical skills with GIS.lab technology
 are :ref:`GIS.lab in practice <practice>` and :ref:`GIS.lab workshop <workshop>`.
 Another useful parts can be :ref:`Useful terms <terms>` 

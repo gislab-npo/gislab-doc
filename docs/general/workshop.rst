@@ -67,15 +67,15 @@ Client Desktop layout
   * introduction to GIS.lab client environment - shared folders, projects, 
     publish, booster, software, services, PostgreSQL schemas, chat, etc.
 
----------------------------
-Introduction to GIS.lab Web
----------------------------
+--------------------
+Gisquick integration
+--------------------
 
-* :ref:`GIS.lab Web <gislab-web>`
+* `Gisquick <http://gisquick.org>`__
 
   * creating development environment
-  * GIS.lab Web plugin introduction
-  * project publishing and GIS.lab Web layout 
+  * Gisquick plugin introduction
+  * project publishing and Gisquick layout 
 
 ----------------
 Practical issues

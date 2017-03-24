@@ -89,7 +89,7 @@ is a main tool for all geospatial tasks. GIS.lab is containing its
 own version of QGIS, which is improved with bug fixes and features and
 it is accessible under **GIS.lab Desktop** item in GIS.lab applications menu.
 
-**GIS.lab Web** client is automatically publishing all GIS projects
+**Gisquick** client is automatically publishing all GIS projects
 created in desktop to web environment.
 
 Following steps will create simplest possible GIS project and will
@@ -126,7 +126,7 @@ as ``~/Projects/my-first-project/my-first-project.qgs`` with
 
 4. Publish project on web
 
-Install **GIS.lab Web plugin** in 
+Install **Gisquick plugin** in 
 :menuselection:`Plugins --> Manage and Install Plugins` section and launch it. 
 
 .. note:: |note| It is safe to ignore on-the-fly transformation warning.
@@ -135,7 +135,7 @@ Publish project by pressing ``Publish`` button in plugin's wizard.
 In next step copy whole directory 
 ``~/Projects/my-first-project`` to ``~/Publish/<name-of-user>`` directory.
 
-Launch **GIS.lab Web** as :menuselection:`GIS.lab --> GIS.lab Web` applications 
+Launch **Gisquick** as :menuselection:`GIS.lab --> Gisquick` applications 
 menu from main
 GIS.lab panel. Ignore security warnings produced by self-signed certificate, 
 i.e. :menuselection:`I Understand the Risks --> Add Exception --> Confirm Security Exception`

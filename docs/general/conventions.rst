@@ -70,7 +70,7 @@ Shell commands beginning with :command:`$` (dollar) should be run in command win
       :guilabel:`Guilabel`
       :menuselection:`First step --> Second step`
       :file:`file.svg`
-      `GIS.lab web page <http://web.gislab.io/>`_
+      `GIS.lab project page <http://web.gislab.io/>`_
       :num:`#some-figure-t`
       :ref:`Conventions <conventions>`
 

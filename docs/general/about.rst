@@ -15,14 +15,15 @@ of multiple machines running software mainly for Geographic
 Information Systems (GIS) as well as for office. 
 
 It is **free technology** which can instantly turn any computer
-network into fully equipped geospatial cluster. It is capable to deploy 
-a complete, centrally managed 
-and horizontally scalable geospatial infrastructure in local area network, 
-data center or cloud in a few moments. 
-It is provided as comprehensive set of free geospatial software 
-seamlessly integrated into one, easy-to-use system with out-of-box running 
-services capable to run with minimal maintenance requirements for desktop, web 
-and mobile client interfaces.
+network into fully equipped geospatial cluster. It is capable to
+deploy a complete, centrally managed and horizontally scalable
+geospatial infrastructure in local area network, data center or cloud
+in a few moments.  It is provided as comprehensive set of free
+geospatial software seamlessly integrated into one, easy-to-use system
+with out-of-box running services capable to run with minimal
+maintenance requirements for desktop inteface (together with `Gisquick
+<http://gisquick.org>`__ project also web and mobile client
+interfaces).
 
 .. _gislab-schema:
 
@@ -131,9 +132,9 @@ Virtual machine deployment is enabled by **Vagrant** and
 <http://www.ltsp.org/>`_ fat client or own solution. It uses OGC Web
 Service Common (OWS) services load balancing, `QGIS
 <http://www.qgis.org>`__ Desktop and Server as GIS.lab Desktop
-including own GIS.lab Web app, own GIS software packaging and `GRASS
-<http://grass.osgeo.org>`_ as processing backend under QGIS Processing
-plugin and WPS.
+including own `Gisquick <http://www.gisquick.org>`__ app, own GIS
+software packaging and `GRASS GIS <http://grass.osgeo.org>`_ as processing
+backend under QGIS Processing plugin and WPS.
 
 Magic command is called ``vagrant up`` and orders to automatically 
 provision GIS.lab server inside of virtual machine on the host computer. 
@@ -150,14 +151,16 @@ provision GIS.lab server inside of virtual machine on the host computer.
 What are the key benefits?
 ==========================
 
-The main advantages are **fully automatic installation** or immediate deployment 
-with GIS.lab unit appliance, **central management** of all machines, user accounts 
-and backups high performance, maintenance free **desktop** interfaces. 
+The main advantages are **fully automatic installation** or immediate
+deployment with GIS.lab unit appliance, **central management** of all
+machines, user accounts and backups high performance, maintenance free
+**desktop** interfaces. Optionally thanks to `Gisquick
+<http://gisquick.org>`__ integration also **web** and **mobile**
+client interfaces.
 
-**Web** and **mobile** client interfaces, web administration interface computing 
-resources sharing across all machines, 
-well known free software with high added value of seamless integration 
-and bug fixes are some of other main qualities. 
+Web administration interface computing resources sharing across all
+machines, well known free software with high added value of seamless
+integration and bug fixes are some of other main qualities.
 
 Useful benefits are also
 central software distribution, easy customization, automatic clustering and 
@@ -253,25 +256,26 @@ formats, ``text`` or ``JSON``.
 
 .. seealso:: |see| `Public events and queries <public-events-and-queries>`
 
-.. _gislab-web-about:
+.. _gisquick-about:
 
-====================
-What is GIS.lab Web?
-====================
+=================
+What is Gisquick?
+=================
 
-GIS.lab Web is a **web application** built on top of modern technologies with 
-very modern user interface optimized also for mobile devices. It stands on the 
-shoulders of `QGIS <http://qgis.org>`__ desktop and server software.
+`Gisquick <http://gisquick.org>`__ is a **web application** built on
+top of modern technologies with very modern user interface optimized
+also for mobile devices. It stands on the shoulders of `QGIS
+<http://qgis.org>`__ desktop and server software.
 
 The main purpose is QGIS projects publishing on web. 
 
-.. _gislab-web-ui:
+.. _gisquick-ui:
 
 .. figure:: ../img/general/gislab-web-ui.png
    :align: center
    :width: 450
 
-   GIS.lab Web interface.
+   Gisquick interface.
 
 =================================
 Is GIS.lab similar to OSGeo Live? 
