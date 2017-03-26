@@ -1,5 +1,3 @@
-.. _installation-physical:
- 
 *************
 Physical Mode
 *************

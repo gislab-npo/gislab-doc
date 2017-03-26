@@ -13,7 +13,7 @@ it means **GIS.lab Desktop** form of GIS.lab.
    :align: center
    :width: 450
 
-   GIS.lab in reality.
+   GIS.lab in action.
 
 
 .. toctree::

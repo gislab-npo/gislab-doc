@@ -399,9 +399,10 @@ and at least ``CAT5 e`` Ethernet cables.
 Virtual Mode
 ------------
 
-This part of documentation assumes that GIS.lab server is installed on **Linux** 
-laptop in **VirtualBox** virtual machine using **Vagrant** as it is documented in 
-:ref:`Virtual Mode <installation-virtual>` installation section.
+This part of documentation assumes that GIS.lab server is installed on
+**Linux** laptop in **VirtualBox** virtual machine using **Vagrant**
+as it is documented in :doc:`../installation/virtual` installation
+section.
 
 .. rubric:: Existing LAN with DHCP server
 
@@ -433,8 +434,9 @@ network via Ethernet cable. Network contains only GIS.lab machines.
 Physical Mode
 -------------
 
-This section assumes that GIS.lab Unit machine is installed as it is 
-documented in `Physical Mode <installation-physical>`_ installation part.
+This section assumes that GIS.lab Unit machine is installed as it is
+documented in :doc:`Physical Mode <../installation/physical>`
+installation part.
 
 .. rubric:: Existing LAN with DHCP server
 

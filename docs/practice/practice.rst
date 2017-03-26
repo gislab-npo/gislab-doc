@@ -50,7 +50,7 @@ Variables ``GISLAB_NETWORK`` and ``GISLAB_CLIENT_KEYBOARDS`` in ``gislab_vagrant
 file will be different. Results after the successful installation for both cases 
 are in figure :num:`#config-virtual`.
 
-.. tip:: |tip| See :ref:`Installation in Virtual Mode <installation-virtual>`
+.. tip:: |tip| See :doc:`Installation in Virtual Mode <../installation/virtual>`
    section for more details about the steps or just use ``vagrant provision``
    command which is used to install and configure the machine Vagrant is managing .
 

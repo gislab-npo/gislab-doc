@@ -4,12 +4,13 @@
 Let's get started
 *****************
 
-You may be coming to :ref:`GIS.lab <about>` from various operating systems, 
-but we expect that you are probably 
-familiar with browsing the web, writing documents, sending emails and doing other
-job related tasks with your computer. Whether you are somewhat experienced or
-completely new to computers, this documentation should be very useful for you.
-Of course, the more experience you have, the more quickly you will learn. 
+You may be coming to :ref:`GIS.lab <about>` from various operating
+systems, but we expect that you are probably familiar with browsing
+the web, writing documents, sending emails and doing other job related
+tasks with your computer. Whether you are somewhat experienced or
+completely new to computers, this documentation should be useful for
+you.  Of course, the more experience you have, the more quickly you
+will learn GIS.lab basics.
 
 In general, this documentation does not assume any computer experience
 on your part. We try to explain in detail what :ref:`GIS.lab
@@ -23,14 +24,14 @@ way.
    :align: center
    :width: 450
 
-   GIS.lab Desktop, Gisquick Web and Mobile interfaces.
+   GIS.lab Desktop interface, and Gisquick Web and Mobile interfaces.
 
 Firstly, there is a section related to introduction called 
 :ref:`Learning about the pieces <about>`. 
 In case you feel sufficiently familiar with all the introductory parts, just skip 
 them and go straight away to :ref:`GIS.lab Installation <gislab-installation>`. 
 Section :ref:`Client Desktop layout <layout>` relates to GIS.lab client
-environment with GIS and no GIS applications.
+environment with GIS and other applications.
 To get to know about QGIS projects publishing on web, see 
 :ref:`Gisquick <gisquick>` part.
 Chapters dedicated to provide practical skills with GIS.lab technology

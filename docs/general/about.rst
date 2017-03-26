@@ -10,9 +10,11 @@ Learning about the pieces
 What is GIS.lab?
 ================
 
-GIS.lab is a tool for simple, unbreakable, always ready and clean deployment 
-of multiple machines running software mainly for Geographic 
-Information Systems (GIS) as well as for office. 
+GIS.lab is a tool for simple, unbreakable, always ready and clean
+deployment of multiple machines running software mainly for
+*Geographic Information Systems* (`GIS
+<http://en.wikipedia.org/Geographical_Information_Systems>`__) as well
+as for office.
 
 It is **free technology** which can instantly turn any computer
 network into fully equipped geospatial cluster. It is capable to
@@ -21,9 +23,9 @@ geospatial infrastructure in local area network, data center or cloud
 in a few moments.  It is provided as comprehensive set of free
 geospatial software seamlessly integrated into one, easy-to-use system
 with out-of-box running services capable to run with minimal
-maintenance requirements for desktop inteface (together with `Gisquick
-<http://gisquick.org>`__ project also web and mobile client
-interfaces).
+maintenance requirements for desktop inteface. Together with
+integrated `Gisquick <http://gisquick.org>`__ project also web and
+mobile client interfaces are available.
 
 .. _gislab-schema:
 
@@ -41,13 +43,16 @@ GIS.lab Desktop is traditional, customized, low resources environment with
 office and geospatial software. This technology promotes combination of desktop 
 performance with web accessibility.
 
-There are two different ways of launching GIS.lab Desktop. Depending on future 
-usage, hardware and software possibilities and other similar factors, GIS.lab 
-Desktop can be implemented using **virtal** or **physical** mode.
+There are two different ways of launching GIS.lab Desktop. Depending
+on future usage, hardware and software possibilities and other similar
+factors, GIS.lab Desktop can be implemented using :doc:`virtual
+<../installation/virtual>` or :doc:`physical
+<../installation/physical>` mode.
 
-Virtual mode can be used for any operating system. Original operating system 
-and GIS.lab will be **available**. On the other hand, physical mode 
-represents best performance but original operating system is **temporary lost**.
+Virtual mode can be used for any operating system. Original operating
+system and GIS.lab will *be available*. On the other hand, physical mode
+represents best performance but original operating system is
+*temporary not available*.
 
 .. _physical-or-virtual-mode:
 
@@ -101,7 +106,7 @@ using GIS.lab unit.
 It is self containing system with very quick results, possible to get web
 application from plain hardware.
 GIS.lab brings high added values by integration of precisely chosen set of 
-geospatial **FOSS**, i.e. one best tool for one thing to one system with 
+geospatial FOSS, i.e. one best tool for one thing to one system with 
 consistent behaviour, many collaboration tools, user and software support.
 
 Full client computer performance utilisation represents opposite to thin client.
@@ -124,7 +129,7 @@ All these computers must be connected with gigabit cables and switch.
 
 Automatic provisioning is enabled by **Ansible** characterised by human-readable 
 automation language, self-documenting syntax, agent-less execution, 
-idempotent modules, templates, support for cloud providers AWS, GCE, Digital 
+independent modules, templates, support for cloud providers AWS, GCE, Digital 
 Ocean, Azure, and the like.
 
 Virtual machine deployment is enabled by **Vagrant** and
@@ -154,9 +159,8 @@ What are the key benefits?
 The main advantages are **fully automatic installation** or immediate
 deployment with GIS.lab unit appliance, **central management** of all
 machines, user accounts and backups high performance, maintenance free
-**desktop** interfaces. Optionally thanks to `Gisquick
-<http://gisquick.org>`__ integration also **web** and **mobile**
-client interfaces.
+**desktop** interfaces. Optionally thanks to :ref:`Gisquick <gisquick>`
+integration also **web** and **mobile** client interfaces.
 
 Web administration interface computing resources sharing across all
 machines, well known free software with high added value of seamless
@@ -236,17 +240,17 @@ Machines belonging to GIS.lab cluster are divided into two roles:
 
    GIS.lab server and GIS.lab clients.
 
-All machines are capable of running different set of `cluster 
-events <https://www.serfdom.io/docs/commands/event.html>`_ and
-`queries <https://www.serfdom.io/docs/commands/query.html>`_ depending
-on their role membership. Events and queries can be send from any
-machine which is a member of GIS.lab cluster using **gislab-cluster client** 
-which is currently just symlink to serf binary or
-programmatically using `RPC mechanism <https://www.serfdom.io/docs/agent/rpc.html>`_. 
-All machines in cluster will receive all events and queries and will decide to
-respond or not depending on existence of
-`handler <https://www.serfdom.io/docs/agent/event-handlers.html>`_
-responsible for particular event or query.
+All machines are capable of running different set of `cluster events
+<https://www.serfdom.io/docs/commands/event.html>`_ and `queries
+<https://www.serfdom.io/docs/commands/query.html>`_ depending on their
+role membership. Events and queries can be send from any machine which
+is a member of GIS.lab cluster using **gislab-cluster** command or
+programmatically using `RPC mechanism
+<https://www.serfdom.io/docs/agent/rpc.html>`_.  All machines in
+cluster will receive all events and queries and will decide to respond
+or not depending on existence of `handler
+<https://www.serfdom.io/docs/agent/event-handlers.html>`_ responsible
+for particular event or query.
 
 The main difference between **event** and **query** is that while query is
 designed to send some query and receive response, the purpose of event
@@ -254,9 +258,9 @@ is just to announce that something has happend or should happen without
 receiving any response. Response from query can be returned in two
 formats, ``text`` or ``JSON``.
 
-.. seealso:: |see| `Public events and queries <public-events-and-queries>`
+.. seealso:: |see| :ref:`public-events-and-queries`
 
-.. _gisquick-about:
+.. _gisquick:
 
 =================
 What is Gisquick?

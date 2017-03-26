@@ -29,7 +29,7 @@ installed.
 
 .. rubric:: GIS.lab source code download
 
-Following command will grab GIS.lab source code to user system.
+Following command will grab the most recent GIS.lab source code to user system.
 
 .. code:: sh
 
@@ -49,40 +49,52 @@ repository and installing it by typing ordinary commands.
    $ sudo apt-get update
    $ sudo apt-get install ansible
 
+.. tip::
+         
+   |tip| The most recent version of Ansible software can be also
+   installed by PIP.
+
+   .. code-block:: sh
+
+      sudo pip install ansible
+
+.. attention::
+
+   |att| GIS.lab requires Ansible version >= 2.
+   
 .. _vb-installation:
 
 .. rubric::  VirtualBox installation
 
-Firstly, add VirtualBox repository signing key, then add repository to system, 
-install Dynamic Kernel Module Support Framework and finally install VirtualBox.
+Install Dynamic Kernel Module Support Framework and VirtualBox
+packages. These packages are needed only for installation in
+:doc:`virtual`.
 
 .. code-block:: sh
    
-   $ wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
-   $ sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" > /etc/apt/sources.list.d/virtualbox.list'
-   $ sudo apt-get update && sudo apt-get install dkms
-   $ sudo apt-get install virtualbox-4.3
+   $ sudo apt-get install dkms virtualbox
 
 .. _vagrant-installation:
 
 .. rubric:: Vagrant installation
 
-It should be first removed previously downloaded Vagrant packages, then 
-downloaded from `www.vagrantup.com <http://www.vagrantup.com/downloads.html>`_ 
-and eventually package should be installed. See instructions below.
+Installing ansible package from default repositories should be
+normally sufficient. The latest version can be downloaded from
+`www.vagrantup.com <http://www.vagrantup.com/downloads.html>`__ and
+eventually this package can be also installed. Vagrant is required
+only for installation in :doc:`virtual`.
 
 .. code-block:: sh
 
-   $ rm -vf ~/Downloads/vagrant_*.deb
-   $ sudo dpkg -i ~/Downloads/vagrant_*.deb
-   $ sudo apt-get -f install
+   $ sudo apt-get -f install vagrant
 
 .. attention:: |att| If running 32-bit host operating system, run following command 
    to download 32-bit Vagrant box from whatever directory.
    
    .. code:: sh
    
-      $ vagrant box add precise-canonical http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box
+      $ vagrant box add precise-canonical \
+      http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box
 
 .. _configuration-section:
 
@@ -107,11 +119,11 @@ When user decides to adjust it, this file should not be modified directly.
    become acquainted with all possibilities of configuration settings. 
    It is full of commented out information. 
 
-For installation in VirtualBox it is recommended to create file
-named ``gislab_vagrant`` in ``system/host_vars`` directory for host specific 
-GIS.lab configuration and put various changes there. 
+For installation in :doc:`Virtual mode <virtual>` it is recommended to
+create file named ``gislab_vagrant`` in ``system/host_vars`` directory
+for host specific GIS.lab configuration and put various changes there.
 
-When Physical mode is used, file in ``system/group_vars`` should
+When :doc:`Physical mode <physical>` is used, file in ``system/host_vars`` should
 be named according to name of GIS.lab unit. This name is a part 
 of Ansible inventory file content, script that Ansible uses
 to determine what to provide. All file names must always match unique 
