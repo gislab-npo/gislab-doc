@@ -211,14 +211,14 @@ The process consists of four main steps:
 .. rubric:: Virtual machine creation
 
 Machines are created in VirtualBox environment and their creation depends on 
-type of booting, see figures :num:`#pxe-vb-settings` and :num:`#http-vb-settings`. 
+type of booting, see :num:`#pxe-vb-settings` and :num:`#http-vb-settings`. 
 
 .. _booting-virtual:
 
 .. rubric:: Booting
 
-It is possible to boot using :ref:`PXE <pxe-boot-virtual>` or 
-:ref:`HTTP <http-boot-virtual>` boot. 
+There are two options how to boot GIS.lab Desktop clients either using
+:ref:`PXE <pxe-boot-virtual>` or :ref:`HTTP <http-boot-virtual>` boot.
 
 .. _pxe-boot-virtual:
 
@@ -329,26 +329,6 @@ VirtualBox Manager, log in and enjoy.
       suspend the virtual machine. In either case, to restart it again,
       simply run `vagrant up`.
 
-In the figures :num:`#client-pxe-logging-in` 
-and :num:`#client-pxe-running` one can see GIS.lab client logging in screen 
-and Desktop of running virtual GIS.lab client using e.g. PXE boot.
-
-.. _client-pxe-logging-in:
-
-.. figure:: ../img/installation/client-pxe-logging-in.png
-   :align: center
-   :width: 450
-
-   GIS.lab client logging in.
-
-.. _client-pxe-running:
-
-.. figure:: ../img/installation/client-pxe-running.png
-   :align: center
-   :width: 450
-
-   GIS.lab client running environment.
-
 Using HTTP boot there are two possible choices to choose from: 
 
 A) :ref:`Automatic GIS.lab detection <automatic-detection>`
@@ -396,8 +376,30 @@ used for choosing GIS.lab server to boot.
 
    Manual network selection using HTTP boot.
 
-IP address can be found out after typing ``ip a | grep eth0`` on GIS.lab server 
-after ``vagrant ssh`` command.
+.. tip::
+      
+   |tip| IP address can be found out after typing ``ip a | grep eth0`` on
+   GIS.lab server after ``vagrant ssh`` command.
+
+In :num:`#client-pxe-logging-in` and :num:`#client-pxe-running` one
+can see GIS.lab client logging screen and Desktop of running
+virtual GIS.lab client.
+
+.. _client-pxe-logging-in:
+
+.. figure:: ../img/installation/client-pxe-logging-in.png
+   :align: center
+   :width: 450
+
+   GIS.lab client logging screen.
+
+.. _client-pxe-running:
+
+.. figure:: ../img/installation/client-pxe-running.png
+   :align: center
+   :width: 450
+
+   GIS.lab client running environment.
 
 .. tip:: |tip| To set custom client display resolution run following command 
    on host machine.
@@ -423,9 +425,9 @@ Virtual Machine from the hard disk. Machine can be started again by using
 .. tip:: |tip| Use ``-f`` or ``-force`` flag to forcefully power off the Virtual 
    Machine. 
 
-===============================
-How to upgrade GIS.lab Desktop?
-===============================
+=======================
+How to upgrade GIS.lab?
+=======================
 
 GIS.lab upgrade procedure consists from three steps: 
 
@@ -451,3 +453,7 @@ Upgrade with Vagrant:
 .. code-block:: sh
 
    $ vagrant provision
+
+.. note::
+
+   |note| Note that virtual machine must be running when performing provisioning.
