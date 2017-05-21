@@ -22,7 +22,6 @@ installed.
 
 .. code:: sh
 
-   $ sudo apt-get update
    $ sudo apt-get install git
 
 .. _GL-clone:
@@ -35,6 +34,12 @@ Following command will grab the most recent GIS.lab source code to user system.
 
    $ git clone https://github.com/gislab-npo/gislab.git
 
+.. note:: |note| Git is not necessary but it is recommended. One can
+   get GIS.lab source code also by downloading latest GIS.lab package
+   from `https://github.com/gislab-npo/gislab.git
+   <https://github.com/gislab-npo/gislab.git>`_ and unpacking it in
+   working directory.
+   
 .. _ansible-installation:
 
 .. rubric:: Ansible installation
@@ -44,23 +49,29 @@ repository and installing it by typing ordinary commands.
 
 .. code-block:: sh
 
-   $ sudo apt-get install software-properties-common
-   $ sudo apt-add-repository ppa:ansible/ansible
-   $ sudo apt-get update
    $ sudo apt-get install ansible
-
-.. tip::
-         
-   |tip| The most recent version of Ansible software can be also
-   installed by PIP.
-
-   .. code-block:: sh
-
-      sudo pip install ansible
 
 .. attention::
 
-   |att| GIS.lab requires Ansible version >= 2.
+    |att| Since version 0.7 GIS.lab requires Ansible version >= 2.
+   
+.. tip::
+         
+  |tip| Most recent version of Ansible software can be also installed
+  also by PIP.
+
+   .. code-block:: sh
+
+      $ sudo pip install ansible
+
+  Or alternatively custom PPA can be used.
+
+   .. code-block:: sh
+
+      $ sudo apt-get install software-properties-common
+      $ sudo apt-add-repository ppa:ansible/ansible
+      $ sudo apt-get update
+      $ sudo apt-get install ansible
    
 .. _vb-installation:
 
@@ -78,29 +89,29 @@ packages. These packages are needed only for installation in
 
 .. rubric:: Vagrant installation
 
-Installing ansible package from default repositories should be
+Installing vagrant package from default repositories should be
 normally sufficient. The latest version can be downloaded from
-`www.vagrantup.com <http://www.vagrantup.com/downloads.html>`__ and
+`vagrantup.com <http://www.vagrantup.com/downloads.html>`__ and
 eventually this package can be also installed. Vagrant is required
 only for installation in :doc:`virtual`.
 
 .. code-block:: sh
 
-   $ sudo apt-get -f install vagrant
+   $ sudo apt-get install vagrant
 
 .. attention:: |att| If running 32-bit host operating system, run following command 
    to download 32-bit Vagrant box from whatever directory.
    
    .. code:: sh
    
-      $ vagrant box add precise-canonical \
-      http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box
+      $ vagrant box add xenial-canonical \
+      https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-i386-vagrant.box
 
 .. _configuration-section:
 
-===============
+=============
 Configuration
-===============
+=============
 
 
 It is recommended to set at least some basic configuration before

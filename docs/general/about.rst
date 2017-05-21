@@ -244,7 +244,7 @@ All machines are capable of running different set of `cluster events
 <https://www.serfdom.io/docs/commands/event.html>`_ and `queries
 <https://www.serfdom.io/docs/commands/query.html>`_ depending on their
 role membership. Events and queries can be send from any machine which
-is a member of GIS.lab cluster using **gislab-cluster** command or
+is a member of GIS.lab cluster using ``gislab-cluster`` command or
 programmatically using `RPC mechanism
 <https://www.serfdom.io/docs/agent/rpc.html>`_.  All machines in
 cluster will receive all events and queries and will decide to respond
@@ -275,7 +275,7 @@ The main purpose is QGIS projects publishing on web.
 
 .. _gisquick-ui:
 
-.. figure:: ../img/general/gislab-web-ui.png
+.. figure:: ../img/general/gisquick-web-ui.png
    :align: center
    :width: 450
 

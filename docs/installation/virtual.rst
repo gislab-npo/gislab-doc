@@ -45,7 +45,7 @@ with graphical representation in :num:`#requirementsvirtual`.
 -  Git, see :ref:`Git installation <git-installation>`
 -  Ansible 2.0 or higher, see :ref:`Ansible installation <ansible-installation>`
 -  VirtualBox 4.3 or higher, see :ref:`VirtualBox installation <vb-installation>`
--  Vagrant 1.9 or higher , see :ref:`Vagrant installation <vagrant-installation>`
+-  Vagrant 1.9 or higher, see :ref:`Vagrant installation <vagrant-installation>`
 
 .. _requirementsvirtual:
 
@@ -62,10 +62,6 @@ with graphical representation in :num:`#requirementsvirtual`.
       $ ansible --version
       $ vboxmanage --version
       $ vagrant --version
-
-.. note:: |note| Git is not necessary but it is recommended. One can get 
-   GIS.lab source code also by downloading latest GIS.lab package from
-   `https://github.com/gislab-npo/gislab.git <https://github.com/gislab-npo/gislab.git>`_ and unpacking it in working directory.
 
 ======
 Master
@@ -89,11 +85,14 @@ The output should be as follows.
 .. code:: sh
 
    Bringing machine 'gislab_vagrant' up with 'virtualbox' provider...
-   ==> gislab_vagrant: Clearing any previously set forwarded ports...
+   ==> gislab_vagrant: Importing base box 'xenial-canonical'...
+   ==> gislab_vagrant: Matching MAC address for NAT networking...
+   ==> gislab_vagrant: Setting the name of the VM: gislab-vagrant-xenial
    ==> gislab_vagrant: Clearing any previously set network interfaces...
    ==> gislab_vagrant: Available bridged network interfaces:
-   1) eth0
-   2) wlan0
+   1) wlan0
+   2) eth0
+   3) docker0
    ==> gislab_vagrant: When choosing an interface, it is usually the one that is
    ==> gislab_vagrant: being used to connect to the internet.
        gislab_vagrant: Which interface should the network bridge to? 
@@ -113,28 +112,36 @@ corresponding adapter. For example, in case of ``eth0`` connection, selection
        gislab_vagrant: Adapter 1: nat
        gislab_vagrant: Adapter 2: bridged
    ==> gislab_vagrant: Forwarding ports...
-       gislab_vagrant: 22 => 2222 (adapter 1)
+       gislab_vagrant: 22 (guest) => 2222 (host) (adapter 1)
    ==> gislab_vagrant: Running 'pre-boot' VM customizations...
    ==> gislab_vagrant: Booting VM...
    ==> gislab_vagrant: Waiting for machine to boot. This may take a few minutes...
        gislab_vagrant: SSH address: 127.0.0.1:2222
-       gislab_vagrant: SSH username: vagrant
-       gislab_vagrant: SSH auth method: private key
-       gislab_vagrant: Warning: Connection timeout. Retrying...
+       gislab_vagrant: SSH username: ubuntu
+       gislab_vagrant: SSH auth method: password
    ==> gislab_vagrant: Machine booted and ready!
    ==> gislab_vagrant: Checking for guest additions in VM...
-       gislab_vagrant: The guest additions on this VM do not match the installed version of
-       gislab_vagrant: VirtualBox! In most cases this is fine, but in rare cases it can
-       gislab_vagrant: prevent things such as shared folders from working properly. If you see
-       gislab_vagrant: shared folder errors, please make sure the guest additions within the
-       gislab_vagrant: virtual machine match the version of VirtualBox you have installed on
-       gislab_vagrant: your host and reload your VM.
+       ...
        gislab_vagrant: 
-       gislab_vagrant: Guest Additions Version: 4.1.44
-       gislab_vagrant: VirtualBox Version: 4.3
+       gislab_vagrant: Guest Additions Version: 5.0.18_Ubuntu r106667
+       gislab_vagrant: VirtualBox Version: 5.1
    ==> gislab_vagrant: Configuring and enabling network interfaces...
-   ==> gislab_vagrant: Machine already provisioned. Run `vagrant provision` or use the `--provision`
-   ==> gislab_vagrant: flag to force provisioning. Provisioners marked to run always will still run.
+   ==> gislab_vagrant: Running provisioner: install (ansible)...
+       gislab_vagrant: Running ansible-playbook...
+       [WARNING]: Not prompting as we are not in interactive mode
+
+   PLAY [all] *********************************************************************
+
+   TASK [installation-setup : Ensure Python 2 is installed before running Ansible modules] ***
+   changed: [gislab_vagrant]
+
+   ...
+
+   TASK [installation-done : Installation of GIS.lab is done] *********************
+   changed: [gislab_vagrant]
+
+   PLAY RECAP *********************************************************************
+   gislab_vagrant             : ok=426  changed=368  unreachable=0    failed=0   
 
 -------------
 User accounts
@@ -302,6 +309,20 @@ After virtual client is created, log in to GIS.lab server and with
    $ vagrant ssh
    $ sudo gislab-machines -a <MAC-address>
 
+.. important:: |imp| Since GIS.lab version 0.6 DHCP service is
+   disabled by default. In order to boot virtual client DHCP service
+   must be running.
+
+   .. code:: sh
+             
+      $ sudo gislab-network start
+
+   To enable DHCP service automatically after booting run:
+
+   .. code:: sh
+             
+      $ sudo gislab-network enable
+               
 .. _client-running-virtual:
 
 .. rubric:: Running virtual GIS.lab client
@@ -324,11 +345,6 @@ VirtualBox Manager, log in and enjoy.
       
       gislab_vagrant            running (virtualbox)
       
-      The VM is running. To stop this VM, you can run `vagrant halt` to
-      shut it down forcefully, or you can run `vagrant suspend` to simply
-      suspend the virtual machine. In either case, to restart it again,
-      simply run `vagrant up`.
-
 Using HTTP boot there are two possible choices to choose from: 
 
 A) :ref:`Automatic GIS.lab detection <automatic-detection>`
@@ -407,7 +423,7 @@ virtual GIS.lab client.
    .. code:: sh
       
       $ VBoxManage controlvm "<GIS.lab client name>" setvideomodehint <xresolution> <yresolution> 32
-      # example 
+      # For example 
       $ VBoxManage controlvm "GIS.lab client PXE" setvideomodehint 1000 660 32
 
 .. note:: |note| Getting a list of all running VirtualBox virtual machines by 
@@ -424,6 +440,12 @@ Virtual Machine from the hard disk. Machine can be started again by using
 
 .. tip:: |tip| Use ``-f`` or ``-force`` flag to forcefully power off the Virtual 
    Machine. 
+
+.. note:: |note| GIS.lab master virtual machine can be deleted by:
+
+   .. code:: sh
+
+      $ vagrant -f destroy
 
 =======================
 How to upgrade GIS.lab?
@@ -442,13 +464,13 @@ is performed by the same provisioner command as used for GIS.lab
 installation. Using GIS.lab provisioner for upgrade is recommended to
 keep all parts of GIS.lab in consistent state.
 
-GIS.lab source code update: 
+In GIS.lab source code directory run: 
 
 .. code-block:: sh
 
    $ git pull
 
-Upgrade with Vagrant:
+Upgrade Master virtual machine with Vagrant:
 
 .. code-block:: sh
 

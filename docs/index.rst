@@ -16,9 +16,7 @@
    step.</em></font></center>
    <p>
 
-.. figure:: img/gislab_screen.png
-   :align: center
-   :width: 500
+.. figure:: img/logo.svg
 
 ========
 Contents
@@ -49,4 +47,3 @@ Contents
    general/communication
    general/credits
 
-.. important:: |imp.| GIS.lab is still in Pre-Release state.
