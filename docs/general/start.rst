@@ -13,10 +13,10 @@ you.  Of course, the more experience you have, the more quickly you
 will learn GIS.lab basics.
 
 In general, this documentation does not assume any computer experience
-on your part. We try to explain in detail what :ref:`GIS.lab
-Desktop<gislab>`, :ref:`Gisquick <gisquick>` are. We even tell you how
-to install and how to use every of these pieces in the most efficient
-way.
+on your part. We try to explain in detail :ref:`GIS.lab
+Desktop<gislab>`, and its integration with :ref:`Gisquick <gisquick>`
+platform. We even tell you how to install and how to use every of
+these pieces in the most efficient way.
 
 .. _desktop-web-mobile:
 
@@ -26,21 +26,20 @@ way.
 
    GIS.lab Desktop interface, and Gisquick Web and Mobile interfaces.
 
-Firstly, there is a section related to introduction called 
-:ref:`Learning about the pieces <about>`. 
-In case you feel sufficiently familiar with all the introductory parts, just skip 
-them and go straight away to :ref:`GIS.lab Installation <gislab-installation>`. 
-Section :ref:`Client Desktop layout <layout>` relates to GIS.lab client
-environment with GIS and other applications.
-To get to know about QGIS projects publishing on web, see 
-:ref:`Gisquick <gisquick>` part.
-Chapters dedicated to provide practical skills with GIS.lab technology
-are :ref:`GIS.lab in practice <practice>` and :ref:`GIS.lab workshop <workshop>`.
-Another useful parts can be :ref:`Useful terms <terms>` 
-or :ref:`Useful commands <commands>`.
-To distinguish between different kinds of information we use some typographical
-and stylistic features, see chapter
-:ref:`Conventions used in this documentation <conventions>`. 
+Firstly, there is a section related to introduction called
+:ref:`Learning about the pieces <about>`.  In case you feel
+sufficiently familiar with all the introductory parts, just skip them
+and go straight away to :ref:`GIS.lab Installation
+<gislab-installation>`.  Section :ref:`Client Desktop layout <layout>`
+relates to GIS.lab client environment with GIS and other applications.
+To get to know about QGIS projects publishing on web, see
+:ref:`Gisquick <gisquick>` part.  Chapters dedicated to provide
+practical skills with GIS.lab technology are :ref:`GIS.lab in practice
+<practice>` and :ref:`GIS.lab workshop <workshop>`.  Another useful
+parts can be :ref:`Useful terms <terms>` or :ref:`Useful commands
+<commands>`.  To distinguish between different kinds of information we
+use some typographical and stylistic features, see chapter
+:ref:`Conventions used in this documentation <conventions>`.
 
 .. _gislab-desktop-start:
 

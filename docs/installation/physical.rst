@@ -2,9 +2,6 @@
 Physical Mode
 *************
 
-In this section, attention shall be given to installation of GIS.lab
-using physical mode.
-
 .. _requirements-physical:
 
 To run GIS.lab in physical mode, there are some hardware and software requirements. 
@@ -60,16 +57,15 @@ The process of installation consists of three main steps:
 2. :ref:`GIS.lab initialization <initialization>`
 3. :ref:`GIS.lab unit installation <unit-installation>`
 
+.. note::
+
+   |note| GIS.lab version 0.7 and higher runs on top of **Ubuntu 16.04
+   Xenial** release. Older versions of GIS.lab run on **Ubuntu 12.04
+   Precise**.
+
 .. _basic-os:
 
 .. rubric:: Adjusted operating system installation
-
-GIS.lab version 0.7 and higher runs on top of **Ubuntu 16.04 Xenial**
-release.
-
-.. note::
-
-   |note| Older versions of GIS.lab run on **Ubuntu 12.04 Precise**.
 
 Following steps will guide user to install basic Ubuntu operating
 system on GIS.lab unit machine. Network is configured to
@@ -82,7 +78,7 @@ In the first step download latest `64-bit PC (AMD64) Server Install
 .. _generate-ssh:
 
 Furthermore, it is important to create **SSH keypair**. Generated
-public part of **keypair** will be used as a way to identify trusted
+public part of keypair will be used as a way to identify trusted
 computers without involving passwords. It can be generated on host
 machine with ``ssh-keygen`` command. By default, the keypair will be
 saved in ``$HOME/.ssh`` directory. It is recommended to rename new key
@@ -114,12 +110,12 @@ GIS.lab unit machine.
     -i Ubuntu Server installation ISO image file
     -h display this help
 
-For example, assuming that downloaded original Ubuntu server installation 
-``ISO image`` is located in ``Downloads`` directory, user wants to use 
-``Italian`` official archive mirror, ``Rome`` timezone, ``SSH public key`` 
-file particularly created for GIS.lab installation is located in 
-``.ssh`` directory and new adjusted image should be saved in ``tmp`` directory, 
-then the script can be run as follows.
+For example, assuming that downloaded original Ubuntu server
+installation ISO image is located in :file:`Downloads` directory, user
+wants to use ``Italian`` official archive mirror, ``Rome`` timezone,
+SSH public key file particularly created for GIS.lab installation is
+located in :file:`.ssh` directory and new adjusted image should be
+saved in :file:`tmp` directory, then the script can be run as follows.
 
 .. code:: sh
 
@@ -148,8 +144,8 @@ custom GIS.lab Unit ISO image file created in previous step. On Ubuntu
 `Startup Disk Creator
 <https://en.wikipedia.org/wiki/Startup_Disk_Creator>`_ or `UNetbootin
 <https://en.wikipedia.org/wiki/UNetbootin>`_ applications can be used.
-Tested and **recommended option** is based of ``dd`` command.  See
-example bellow.
+**Recommended procedure** is based of ``dd`` command.  See example
+bellow.
 
 .. code-block:: sh
    
@@ -161,7 +157,7 @@ example bellow.
 .. important::
 
    |imp| In example above is assumed that USB stick has been connected
-   to host machine as ``/dev/sdf``. Your configuration **can be
+   to host machine as ``/dev/sdf`` device. Your configuration **can be
    different**, please check connected devices by ``dmesg`` command!
    Note that formatting can be also done by ``gparted`` GUI
    application. For ``isohybrid`` command ``syslinux`` package must be
@@ -195,12 +191,12 @@ to log in to unit from host machine using SSH. That is why SSH key
 :ref:`was generated <generate-ssh>`.
 
 .. important:: |imp| GIS.lab unit has to be registered in the
-   network. In other words ``IP address`` has to be assigned to
-   unit. Run ``ip a`` command to detect this address.
+   network. In other words `IP address` has to be assigned to
+   unit. Run ``ip a`` command on the unit to detect this address.
 
-In case unit is not registered automatically, run DHCP client that apply for
-``IP address``. Then verify working internet connection, 
-e.g. with ``ping`` command. 
+In case unit is not registered automatically, run DHCP client that
+apply for IP address. Then verify working internet connection,
+e.g. with ``ping`` command.
 
 .. code:: sh
 
@@ -213,45 +209,29 @@ e.g. with ``ping`` command.
 To log in on GIS.lab unit machine via SSH enter on host machine ``ssh
 ubuntu@<ip addr>``
 
-.. note:: |note| Instead of ``IP address`` also assigned ``name`` of registered 
-   unit should work, for example ``gislab.intra.ismaa.it``. This name can be 
-   found in output of ``nslookup <ip address>`` command.
+.. note:: |note| Instead of IP address also assigned ``name`` of
+   registered unit should work, for example
+   ``gislab.intra.ismaa.it``. This name can be found in output of
+   ``nslookup <ip address>`` command.
 
-.. code:: sh
+   .. code:: sh
 
-   ludka@lenovo:~$ ssh gislab@server.intra.ismaa.it.
-   
-      _____ _____  _____  _       _ 
-     / ____|_   _|/ ____|| |     | | 
-    | |  __  | | | (___  | | __ _| |__
-    | | |_ | | |  \___ \ | |/ _` | '_ \ 
-    | |__| |_| |_ ____) || | (_| | |_) |
-     \_____|_____|_____(_)_|\__,_|_.__/   VERSION: init-1950-g1ce4a79, ID: gislab-unit-fem
-   
-   
-   
-   10 packages can be updated.
-   9 updates are security updates.
-   
-   
-   Your Hardware Enablement Stack (HWE) is supported until April 2017.
-   
-   Last login: Thu Apr 28 14:24:02 2016 from lenovo.intra.ismaa.it
-   gislab@server.GIS.lab(gislab-unit-fem):~$ 
+      $ ssh gislab@server.intra.ismaa.it -i ~/.ssh/id_rsa_gislab_unit.pub
 
 .. _initialization:
 
 .. rubric:: GIS.lab unit initialization
 
-With regards to the recommended initialization, there are two 
-important Ansible files, ``*.inventory`` file and file in ``host_vars`` 
-directory which has already been stated in 
-:ref:`configuration section <configuration-section>` of this documentation. 
+With regards to the recommended initialization, there are two
+important Ansible files, :file:`<name-of-gislab-unit>.inventory` file and
+configuration file in :file:`host_vars` directory which has already
+been stated in :ref:`configuration section <configuration-section>` of
+this documentation.
 
 .. _ansible-inventory-file:
 
 Let's create Ansible inventory file. The name depends on unit's name
-which is the same as customization file in ``host_vars``
+which is the same as customization file in :file:`host_vars`
 directory. The inventory file contains information about:
 
 * name of GIS.lab unit
@@ -304,16 +284,18 @@ GIS.lab unit will reboot when finished.
    script is exactly performing.
 
 .. note:: |note| The initialization process depends on
-          platform. Currently GIS.lab supports also `AWS
-          <https://aws.amazon.com/>`__, see ``providers`` directory.
+   platform. Currently GIS.lab supports also `AWS
+   <https://aws.amazon.com/>`__, see :file:`providers`
+   directory.
 
 .. _unit-installation: 
 
 .. rubric:: GIS.lab unit installation
 
-Once GIS.lab is configured, installation can be performed. Run following 
-command to execute another ``ansible-playbook``. In this step all the work is 
-made by ``gislab.yml`` file located in ``system`` directory.
+Once GIS.lab is configured, installation can be performed. Run
+following command to execute another ``ansible-playbook``. In this
+step all the work is made by :file:`gislab.yml` file located in
+:file:`system` directory.
 
 .. _gislab-yml:
 
@@ -327,10 +309,11 @@ made by ``gislab.yml`` file located in ``system`` directory.
 
    $ ansible-playbook --inventory=gislab-unit-fem.inventory --private-key=~/.ssh/id_rsa_gislab_unit system/gislab.yml 
 
-Now, GIS.lab unit machine is installed with GIS.lab system. Do not forget 
-to :ref:`create user accounts <user-creation>` by ``gislab-adduser`` command 
-and :ref:`allow their client machines <client-enabling-physical>` to connect 
-by running ``gislab-machines`` command.
+Now, GIS.lab unit machine is installed with GIS.lab system. Do not
+forget to :ref:`create user accounts <user-creation>` by
+``gislab-adduser`` command and :ref:`allow client machines
+<client-enabling-physical>` to connect by running ``gislab-machines``
+command.
 
 ======
 Client
@@ -352,15 +335,15 @@ Physical client mode is preferred way of launching GIS.lab client,
 because it provides best performance. It will run GIS.lab client session
 on client machine instead of original operating system installed (if
 any) on hard drive. Original operating system and local data will stay
-untouched and will be ready to run again after GIS.lab client is shut down.
+**untouched** and will be ready to run again after GIS.lab client is shut down.
 
 To run physical client, it is required to connect machine running
 GIS.lab server and client machines via **Gigabit switch and cables**, CAT 5e
 or higher.
 
-There is no reason to be afraid of loosing domestic operating system. 
-GIS.lab client is capable to run even if you have **Windows**, **Linux** 
-or **MAC OC X**. The spell is concealed in a type of machine booting.
+There is no reason to be afraid of loosing domestic operating system.
+GIS.lab client is capable to run even if you have Windows, Linux or
+MAC OSX installed on cliet machine.
 
 Complete process of running GIS.lab client using physical mode, i.e. GIS.lab
 unit consists of three main steps.
@@ -401,17 +384,18 @@ requires to instruct client machine to boot from other device as it is
 usually doing so. On newer computers it is also required to 
 disable **Secure** boot and/or enable **Legacy** mode.
 
-.. important:: |imp| It is necessary to enabling NIC in Bios. 
+.. important:: |imp| It is necessary to enabling NIC in BIOS. 
 
-The way how to enabling NIC is going into BIOS and look for it.
-It depends on machine. BIOS boot order can be changed for one time using 
-``F9`` or ``F12`` key, for permanent setup from BIOS configuration using 
-``DEL``,``F2`` or ``F12``, but it can differ from one to another machine brand.
+The way how to enabling NIC is going into BIOS and look for it.  It
+depends on machine. BIOS boot order can be changed for one time using
+``F9`` or ``F12`` key, for permanent setup from BIOS configuration
+using ``DEL``, ``F2`` or ``F12``, but it can differ from one to
+another machine brand.
 
-It is recommended to look for *Preiferal devices*, *System Configuration*,
-*Integrated Devices* or something similar and find **NIC** card there. 
-When it is found, **enabled** and then back out, save and reboot should be 
-selected.
+It is recommended to look for *Preferal devices*, *System
+Configuration*, *Integrated Devices* or something similar and find
+**NIC** card there.  When it is found, **enabled** and then back out,
+save and reboot should be selected.
 
 In general, there are multiple possibilities how to instruct client machine to 
 boot from PXE. See potential instructions below.
@@ -430,8 +414,9 @@ C. ``PXE`` or ``LAN`` option set as first boot device in BIOS configuration
    :ref:`Lenovo <pxe-boot-lenovo>` or :ref:`Dell <pxe-boot-dell>` machine in 
    :ref:`GIS.lab in practice <practice>` section.
 
-   For more information about how it works see for example
-   `PXE Boot Server Installation Steps in Ubuntu Server VM <http://askubuntu.com/questions/412574/pxe-boot-server-installation-steps-in-ubuntu-server-vm/414813>`.
+   For more information about how it works see for example `PXE Boot
+   Server Installation Steps in Ubuntu Server VM
+   <http://askubuntu.com/questions/412574/pxe-boot-server-installation-steps-in-ubuntu-server-vm/414813>`__.
 
 .. _http-boot-physical:
 
@@ -442,8 +427,8 @@ HTTP boot
 In addition to default PXE boot method, GIS.lab clients can boot over
 HTTP, which can provide some advantages. 
 
-To enable HTTP boot, it is needed to create **bootable USB stick** from
-special **ISO image** which exists in **http-boot** directory.
+To enable HTTP boot, it is needed to create **bootable USB stick**
+from special **ISO image** which exists in :file:`http-boot` directory.
 Recipe is as follows.
 
 Insert free USB stick into Linux workstation machine. If it is
@@ -466,18 +451,19 @@ from it.
 
 .. rubric:: Enabling GIS.lab client on GIS.lab server
 
-By default, no client machines are allowed to boot from server. To allow
-client machine, there are similar steps to steps described for 
-:ref:`virtual <client-enabling-virtual>` mode. Simply run 
-``gislab-machines -a`` command on **GIS.lab server** and enable the client.
+By default, no client machines are allowed to boot from GISlab
+server. To allow client machine, there are similar steps to steps
+described for :ref:`virtual <client-enabling-virtual>` mode. Simply
+run ``gislab-machines`` command on **GIS.lab server** and enable the
+client.
 
 .. code:: sh
 
    sudo gislab-machines -a <MAC-address>
 
-.. tip:: Good way to collect ``MAC addresses`` of client machines is to plainly 
-   let them try to boot and than run following command to get list of denied
-   MAC addresses on server.
+.. tip:: Good way to collect ``MAC addresses`` of client machines is
+   to plainly let them try to boot and than run following command to
+   get list of denied MAC addresses on GIS.lab server.
 
    .. code:: sh
 
@@ -517,18 +503,9 @@ Enjoy!
 How to upgrade GIS.lab Desktop?
 ===============================
 
-GIS.lab upgrade procedure consists from three steps: 
-
-1. server software upgrade
-2. client images upgrade
-3. GIS.lab system itself upgrade
-
-Although, it is possible to run each step separately by hand, GIS.lab
-provisioner is designed as idempotent task which is capable of both,
-GIS.lab installation and also upgrade. This means, that GIS.lab upgrade
-is performed by the same provisioner command as used for GIS.lab
-installation. Using GIS.lab provisioner for upgrade is recommended to
-keep all parts of GIS.lab in consistent state.
+GIS.lab upgrade procedure consists from three steps described in
+:ref:`virtual mode <gislab-upgrade-virtual>` section. Only difference
+is command used for upgrade, Ansible is used instead of Vagrant.
 
 GIS.lab source code update: 
 

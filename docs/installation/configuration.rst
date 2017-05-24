@@ -28,7 +28,7 @@ installed.
 
 .. rubric:: GIS.lab source code download
 
-Following command will grab the most recent GIS.lab source code to user system.
+Following command will grab the *most recent* GIS.lab source code to user system.
 
 .. code:: sh
 
@@ -39,13 +39,18 @@ Following command will grab the most recent GIS.lab source code to user system.
    from `https://github.com/gislab-npo/gislab.git
    <https://github.com/gislab-npo/gislab.git>`_ and unpacking it in
    working directory.
-   
+
+For production environment it's recommended to grab recent `stable
+version <https://github.com/gislab-npo/gislab/releases>`__ (source
+code) directly from GitHub.
+      
 .. _ansible-installation:
 
 .. rubric:: Ansible installation
 
-Ansible is an automation engine and its installation includes adding Ansible 
-repository and installing it by typing ordinary commands.
+Ansible is an automation engine used by GIS.lab for fully automatized
+provisioning. Its installation can be performed by typing ordinary
+commands.
 
 .. code-block:: sh
 
@@ -91,9 +96,8 @@ packages. These packages are needed only for installation in
 
 Installing vagrant package from default repositories should be
 normally sufficient. The latest version can be downloaded from
-`vagrantup.com <http://www.vagrantup.com/downloads.html>`__ and
-eventually this package can be also installed. Vagrant is required
-only for installation in :doc:`virtual`.
+`vagrantup.com <http://www.vagrantup.com/downloads.html>`__. Vagrant
+is required only for installation in :doc:`virtual`.
 
 .. code-block:: sh
 
@@ -122,23 +126,26 @@ configuration. However, it is required to change at least default network
 configuration variable ``GISLAB_NETWORK``, if GIS.lab's default network
 range ``192.168.50.0/24`` already exists in LAN to prevent IP conflicts.
 
-Default GIS.lab configuration file named ``all`` exists in ``system/group_vars``,
-see figure :num:`#configuration-files`.
-When user decides to adjust it, this file should not be modified directly. 
+Default GIS.lab configuration file named :file:`all` exists in
+:file:`system/group_vars` directory located in GIS.lab source code,
+see :num:`#configuration-files`.  When user decides to adjust it, this
+file should not be modified directly. Instead a custom configuration
+file in :file:`system/host_vars` directory should be created.
 
-.. tip:: |tip| Find that file in GIS.lab repository and see its content to 
-   become acquainted with all possibilities of configuration settings. 
-   It is full of commented out information. 
+.. tip:: |tip| Find the :file:`system/group_vars/all` file in GIS.lab
+   source code tree and see its content to become acquainted with all
+   possibilities of configuration settings.  It is full of commented
+   out information.
 
 For installation in :doc:`Virtual mode <virtual>` it is recommended to
 create file named ``gislab_vagrant`` in ``system/host_vars`` directory
 for host specific GIS.lab configuration and put various changes there.
 
-When :doc:`Physical mode <physical>` is used, file in ``system/host_vars`` should
-be named according to name of GIS.lab unit. This name is a part 
-of Ansible inventory file content, script that Ansible uses
-to determine what to provide. All file names must always match unique 
-host name specified in inventory file.
+When :doc:`Physical mode <physical>` is used, file in
+``system/host_vars`` directory should be named according to name of
+GIS.lab unit. This name is a part of Ansible inventory file content,
+script that Ansible uses to determine what to provide. All file names
+must always match unique host name specified in inventory file.
 
 .. _configuration-files:
 
@@ -148,8 +155,9 @@ host name specified in inventory file.
 
    File layout related to configuration.
 
-File ``gislab_vagrant`` will be loaded automatically by Vagrant 
-without need to manually :ref:`create the Ansible inventory file <create-ansible-inventory-file>`. 
+File ``gislab_vagrant`` will be loaded automatically by Vagrant
+without need to manually :ref:`create the Ansible inventory file
+<create-ansible-inventory-file>`.
 
 .. tip:: |tip| See :ref:`practical example <example-configuration>` of 
          configuration file.

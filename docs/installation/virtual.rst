@@ -2,28 +2,39 @@
 Virtual Mode
 ************
 
-This part describes installation of GIS.lab in virtual machine using Vagrant 
-and VirtualBox. Only **Linux** and **MAC OS X** operating systems are supported. 
-Installation process will NOT modify anything on your host machine. Every 
-operation is done inside of virtual machine.
+This part describes installation of GIS.lab in virtual machine using
+Vagrant and VirtualBox. Only **Linux** and **MAC OS X** operating
+systems on host machine are supported.  Installation process will NOT
+modify anything on your host machine. Every operation is done inside
+of virtual machine.
 
-GIS.lab server contains its own DHCP server. DHCP server is used in almost every 
-local network for automatic network configuration. By default, access to GIS.lab's 
-DHCP server is restricted only for GIS.lab client machines (by list of their 
-MAC addresses) and it is managed by ``gislab-machines`` administrator command. 
-It is possible to switch access policy to unrestricted, but it is required to 
-double check that no DHCP servers conflict will occur. 
-Otherwise, serious network breakage may be done. 
+GIS.lab server contains its own DHCP server which is by default
+disabled. DHCP server is used in almost every local network for
+automatic network configuration. If there is no DHCP server in your
+network configurated to support GIS.lab (it's typical situation in
+Virtual mode), own DHCP server on GIS.lab server must be enabled
+otherwise GIS.lab clients will not able to boot. GIS.lab DHCP server
+can be controlled by ``gislab-network`` administrator command, see
+:ref:`installation process <gislab-network>` for details. By default,
+access to GIS.lab's DHCP server is restricted only for GIS.lab client
+machines (by list of their MAC addresses) and it is managed by
+``gislab-machines`` administrator command.  It is possible to switch
+access policy to accept all clients, but it is required to double
+check that no DHCP servers conflict will occur. Otherwise, serious
+network breakage may be done.
 
-.. attention:: |att| Please, never change policy to unrestricted when connecting 
-   to your corporate LAN!
+.. attention:: |att| Please, never change policy to allow all clients
+   when connecting to your corporate LAN! It's also recommended in
+   this case to use corporate DHCP server (and keep GIS.lab DHCP
+   server disabled).
 
-GIS.lab creates it's own network. By default it is in range ``192.168.50.0/24``. 
-If this range already exists in LAN where GIS.lab is going to be deployed, 
-it is required to change it using ``GISLAB_NETWORK`` configuration variable.
+If DHCP server on GIS.lab is enabled than own network is created. By
+default it is in range ``192.168.50.0/24``.  If this range already
+exists in LAN where GIS.lab is going to be deployed, it is required to
+change it using ``GISLAB_NETWORK`` configuration variable.
 
-See :ref:`Configuration section <configuration-section>` for more information 
-about configuration. 
+See :ref:`Configuration section <configuration-section>` for more
+information.
 
 .. important:: |imp| Without changing network configuration variable IP 
    conflicts may occur. 
@@ -70,15 +81,17 @@ Master
 GIS.lab installation takes from 30 minutes to few hours depending on
 your machine performance and Internet connection speed.
 
-Run following command in source code directory to power on the Virtual Machine.
-Everytime ``up`` command is used, ``Vagrantfile`` will is used for 
-configuration. If the ``up`` command is run first time, it also run the 
-``vagrant provision`` command internally used to provision, i.e. install and 
-configure software. 
+Run following command in source code directory to power on the Virtual
+Machine providing GIS.lab master (server).
 
 .. code:: sh
 
    $ vagrant up
+
+Everytime ``up`` command is performed, ``Vagrantfile`` will
+be used for configuration of virtual machine. If the ``up`` command is
+run first time, it also run the ``provision`` command internally used
+to provision, i.e. install and configure a virtual machine.
 
 The output should be as follows.
 
@@ -97,14 +110,15 @@ The output should be as follows.
    ==> gislab_vagrant: being used to connect to the internet.
        gislab_vagrant: Which interface should the network bridge to? 
 
-If machine contains multiple network adapters, user is asked to choose one 
-corresponding adapter. For example, in case of ``eth0`` connection, selection 
-``2`` should be choosen. Then the installation goes ahead.
+If host machine contains multiple network adapters, user is asked to
+choose one corresponding adapter. For example, in case of ``eth0``
+connection, selection ``2`` should be choosen. Then the installation
+goes ahead.
 
 .. tip::
 
-   |tip| Choose network interface which is not currently used for
-   Internet connection.
+   |tip| Typically choose network interface which is NOT currently
+   used for Internet connection.
    
 .. code:: sh
 
@@ -147,9 +161,11 @@ corresponding adapter. For example, in case of ``eth0`` connection, selection
 User accounts
 -------------
 
-GIS.lab user accounts are created by GIS.lab administrator on demand. 
-The same login credentials are valid for logging in to GIS.lab client session 
-and to all GIS.lab services as well.
+GIS.lab user accounts are created by administrator on demand. Due to
+`LDAP
+<https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol>`__
+integration the same login credentials are valid for logging in to
+GIS.lab client session and to all GIS.lab services as well.
 
 By default, GIS.lab installation creates only a superuser account ``gislab``. 
 Ordinary user account can be created by logging in to GIS.lab server, i.e. 
@@ -167,27 +183,26 @@ in the folder where ``Vagrantfile`` is. That file contains all necessary informa
 
 .. _user-creation:
 
-For example ``lab1`` user account with password ``lab`` can then be created by 
-using ``gislab-adduser`` command.
+New user accounts can be created by using ``gislab-adduser`` command,
+the command below creates ordinary user ``lab1`` with `lab` as
+password.
 
 .. code:: sh 
 
    $ sudo gislab-adduser -g User -l GIS.lab -m lab1@gis.lab -p lab lab1
 
-With ``gislab-listusers`` list of all GIS.lab users is displayed, see example below.
+.. tip:: |tip| Superuser accounts can be created by ``-s`` flag, see
+   ``gislab-adduser --help`` for more information.  Superuser will be
+   able to perform ``sudo`` operations on client machines.
+      
+With ``gislab-listusers`` list of all GIS.lab users is displayed, see
+example below.
 
 .. code:: sh
-	
+
    $ sudo gislab-listusers | grep uid:
    uid: uid=gislab
    uid: uid=lab1
-
-   $ sudo gislab-adduser -g User -l GIS.lab -m furtkevicova@gis.lab -p ludmila furtkevicova
-   
-   $ sudo gislab-listusers | grep dn:
-   uid: uid=gislab
-   uid: uid=lab1
-   uid: uid=furtkevicova
 
 ======
 Client
@@ -234,12 +249,13 @@ PXE boot
 --------
 
 PXE boot is a default boot mode for GIS.lab clients. It is a simplest
-method to get client up and running, but it may not work if
-multiple DHCP boot servers or GIS.lab servers exists in network.
+method to get client up and running, but it may not work if multiple
+DHCP boot servers or GIS.lab servers exists in network.
 
-It is necessary to configure boot order to boot only **from network**, enable IO APIC, 
-configure network adapter in bridged mode, make sure that ``PCnet-FAST III (Am79C973)`` 
-is selected as the adapter type and allow promiscuous mode for all. 
+It is necessary to configure boot order to boot only **from network**,
+enable IO APIC, configure network adapter in bridged mode, make sure
+that ``PCnet-FAST III (Am79C973)`` is selected as the adapter type and
+allow promiscuous mode for all.
 
 .. _pxe-vb-settings:
 
@@ -260,7 +276,7 @@ clients, which offers some advanced features and allows to boot if
 multiple DHCP boot servers or GIS.lab servers exists in LAN. HTTP boot is 
 performed by loading 
 system from special GIS.lab bootloader **ISO image file**, which exists 
-in *http-boot/gislab-bootloader.iso*. Here is a
+in :file:`http-boot/gislab-bootloader.iso`. Here is a
 list of notable advantages of HTTP boot over PXE:
 
 -  it is the only way to boot if multiple DHCP boot servers or GIS.lab
@@ -274,7 +290,7 @@ list of notable advantages of HTTP boot over PXE:
    (VirtualBox), which is many times faster than network adapter used
    for PXE
 
-Using HTTP boot it is necessary to add virtual *gislab-bootloader.iso* file as 
+Using HTTP boot it is necessary to add virtual :file:`gislab-bootloader.iso` file as 
 virtual CD/DVD, configure boot order to boot only from virtual CD/DVD, enable *IO
 APIC*, configure network adapter in bridged mode, make sure 
 ``Paravirtualized Network (virtio-net)`` is selected as the adapter type and allow
@@ -301,14 +317,17 @@ of ``Bridged Adapter``.
 
 .. rubric:: Enabling GIS.lab client on GIS.lab server
 
-After virtual client is created, log in to GIS.lab server and with 
-``gislab-machines -a`` allow client machine to connect.
+After virtual client is created, log in to GIS.lab server and with
+``gislab-machines`` administration command allow client machine to
+connect.
 
 .. code:: sh
 
    $ vagrant ssh
    $ sudo gislab-machines -a <MAC-address>
 
+.. _gislab-network:
+   
 .. important:: |imp| Since GIS.lab version 0.6 DHCP service is
    disabled by default. In order to boot virtual client DHCP service
    must be running.
@@ -336,7 +355,7 @@ VirtualBox Manager, log in and enjoy.
 
    GIS.lab virtual client launching.
 
-.. note:: |note| Make sure that GIS.lab Master is running.
+.. note:: |note| Make sure that GIS.lab master (server) is running.
 
    .. code:: sh
 
@@ -394,8 +413,8 @@ used for choosing GIS.lab server to boot.
 
 .. tip::
       
-   |tip| IP address can be found out after typing ``ip a | grep eth0`` on
-   GIS.lab server after ``vagrant ssh`` command.
+   |tip| IP address can be found out after typing ``ip a | grep eth0``
+   on GIS.lab server after log in by ``vagrant ssh`` command.
 
 In :num:`#client-pxe-logging-in` and :num:`#client-pxe-running` one
 can see GIS.lab client logging screen and Desktop of running
@@ -433,10 +452,11 @@ virtual GIS.lab client.
 
       $ VBoxManage list runningvms
 
-For logging out from GIS.lab server use ``logout`` and then use ``vagrant halt``
-to shut down the running machine Vagrant is managing. It does not remove the 
-Virtual Machine from the hard disk. Machine can be started again by using 
-``vagrant up`` command. 
+For logging out from GIS.lab server use ``logout`` and then use
+``vagrant halt`` to shut down the running machine Vagrant is
+managing. It does not remove the Virtual Machine from the hard
+disk. Machine (GIS.lab master/server) can be started again by using
+``vagrant up`` command.
 
 .. tip:: |tip| Use ``-f`` or ``-force`` flag to forcefully power off the Virtual 
    Machine. 
@@ -447,6 +467,9 @@ Virtual Machine from the hard disk. Machine can be started again by using
 
       $ vagrant -f destroy
 
+
+.. _gislab-upgrade-virtual:
+      
 =======================
 How to upgrade GIS.lab?
 =======================
@@ -470,7 +493,7 @@ In GIS.lab source code directory run:
 
    $ git pull
 
-Upgrade Master virtual machine with Vagrant:
+And upgrade GIS.lab master (server) virtual machine with Vagrant:
 
 .. code-block:: sh
 

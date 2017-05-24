@@ -7,8 +7,7 @@
 
    <h1><center>Welcome to GIS.lab documentation!</center></h1>
    <p>
-   <center><em> ... from nothing to multi-node geospatial cluster with map for 
-   web and mobile in few minutes!</em></center>
+   <center><em> ... from nothing to multi-node geospatial cluster in few minutes!</em></center>
    <p>
    <center><font color="gray"><em>Your voyage to land of GIS.lab starts here. 
    Go beyond the basics and unleash the full power of GIS.lab with useful,

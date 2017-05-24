@@ -24,8 +24,8 @@ in a few moments.  It is provided as comprehensive set of free
 geospatial software seamlessly integrated into one, easy-to-use system
 with out-of-box running services capable to run with minimal
 maintenance requirements for desktop inteface. Together with
-integrated `Gisquick <http://gisquick.org>`__ project also web and
-mobile client interfaces are available.
+integrated `Gisquick <http://gisquick.org>`__ publishing platform also
+*web and mobile client* interfaces can be available.
 
 .. _gislab-schema:
 
@@ -45,7 +45,7 @@ performance with web accessibility.
 
 There are two different ways of launching GIS.lab Desktop. Depending
 on future usage, hardware and software possibilities and other similar
-factors, GIS.lab Desktop can be implemented using :doc:`virtual
+factors, GIS.lab Desktop can be launched in :doc:`virtual
 <../installation/virtual>` or :doc:`physical
 <../installation/physical>` mode.
 
@@ -94,55 +94,56 @@ technologies popularization.
 Fundamental aims
 ================
 
-One of the main objectives is rapid deployment of complete **geospatial solution** 
-for collaborative data capturing, processing, analysis and publication on web
-with fully **automatic provisioning** and **out of box working deployment** 
-using GIS.lab unit.
+One of the main objectives is rapid deployment of complete
+**geospatial solution** for collaborative data capturing, processing,
+analysis and publication with fully **automatic provisioning** and
+**out of box working deployment** using GIS.lab unit.
 
 .. figure:: ../img/general/gislab-guys.svg
    :align: center
    :width: 250
 
-It is self containing system with very quick results, possible to get web
-application from plain hardware.
-GIS.lab brings high added values by integration of precisely chosen set of 
-geospatial FOSS, i.e. one best tool for one thing to one system with 
-consistent behaviour, many collaboration tools, user and software support.
+It is self containing system with very quick results, possible to get
+geospatial computation cluster from plain hardware.  GIS.lab brings
+high added values by integration of precisely chosen set of geospatial
+FOSS, i.e. one best tool for one thing to one system with consistent
+behaviour, many collaboration tools, user and software support.
 
-Full client computer performance utilisation represents opposite to thin client.
-It provides real desktop experience without any thin-client glitches.
-Rather than a traditional desktop, GIS.lab provides thinking about client 
-environment more as about some kind of specialized client interface 
-providing tools from desktop world. 
-It allows computer resources sharing, same deployment in LAN and cloud, 
-mobile clients and web administration similar to router or NAS (plans).
+Full client computer performance utilisation represents opposite to
+thin client.  It provides real desktop experience without any
+thin-client glitches.  Rather than a traditional desktop, GIS.lab
+provides thinking about client environment more as about some kind of
+specialized client interface providing tools from desktop world.  It
+allows computer resources sharing, same deployment in LAN and data
+center or cloud.
 
 ===============
 How it is done?
 ===============
 
-GIS.lab consists from one host machine running **Linux**, **Windows** or **Mac** 
-operating system and any number of client computers with nearly no 
-requirements. No operating system, even no hard disk is required 
-but no problem if they exist. 
-All these computers must be connected with gigabit cables and switch. 
+GIS.lab consists from one machine playing a role of master node
+(server, see :ref:`GIS.lab unit <gislab-unit>` section) running
+**Linux** operating system and any number of client computers with
+nearly no requirements. No operating system, even no hard disk is
+required but no problem if they exist.  All these computers must be
+connected with gigabit network cables and switch.
 
-Automatic provisioning is enabled by **Ansible** characterised by human-readable 
-automation language, self-documenting syntax, agent-less execution, 
-independent modules, templates, support for cloud providers AWS, GCE, Digital 
-Ocean, Azure, and the like.
+Automatic provisioning is enabled by **Ansible** characterised by
+human-readable automation language, self-documenting syntax,
+agent-less execution, independent modules, templates, support for
+cloud providers AWS, GCE, Digital Ocean, Azure, and the like.
 
 Virtual machine deployment is enabled by **Vagrant** and
 **VirtualBox**. Client boot service is `Linux Terminal Server
-<http://www.ltsp.org/>`_ fat client or own solution. It uses OGC Web
-Service Common (OWS) services load balancing, `QGIS
-<http://www.qgis.org>`__ Desktop and Server as GIS.lab Desktop
-including own `Gisquick <http://www.gisquick.org>`__ app, own GIS
-software packaging and `GRASS GIS <http://grass.osgeo.org>`_ as processing
-backend under QGIS Processing plugin and WPS.
+<http://www.ltsp.org/>`_ fat client or own solution. GIS.lab provides
+out of the box OGC Open Web Service (OWS) services load balancing,
+`QGIS <http://www.qgis.org>`__ Desktop and Server as GIS.lab Desktop,
+own GIS software packaging and `GRASS GIS <http://grass.osgeo.org>`_
+as processing backend under QGIS Processing plugin and WPS.
 
-Magic command is called ``vagrant up`` and orders to automatically 
-provision GIS.lab server inside of virtual machine on the host computer. 
+Magic command is called ``vagrant up`` and orders to automatically
+provision GIS.lab server inside of virtual machine on the host
+computer, see :doc:`../installation/index` section for details.
 
 .. _key-sw:
 
@@ -159,8 +160,9 @@ What are the key benefits?
 The main advantages are **fully automatic installation** or immediate
 deployment with GIS.lab unit appliance, **central management** of all
 machines, user accounts and backups high performance, maintenance free
-**desktop** interfaces. Optionally thanks to :ref:`Gisquick <gisquick>`
-integration also **web** and **mobile** client interfaces.
+**desktop** interfaces. Additionaly thanks to :ref:`Gisquick
+<gisquick>` integration also **web** and **mobile** client interfaces
+are available.
 
 Web administration interface computing resources sharing across all
 machines, well known free software with high added value of seamless
@@ -185,14 +187,14 @@ mode.
 What is GIS.lab unit?
 =====================
 
-GIS.lab unit appliance is a hardware solution containing installation of 
-GIS.lab system which is ready for immediate plug-and-play deployment and 
-user friendly management using web administration interface.
+GIS.lab unit appliance is a hardware solution containing installation
+of GIS.lab system which is ready for immediate plug-and-play
+deployment and user friendly management.
 
-With a view to further specifying the hardware, GIS.lab unit can be presented as 
-**Intel Haswell**, **16 GB RAM**, **SSD**, tested with **20 clients**, 
-portable, pocket size (11 x 11 x 4 cm) device with automatic host network 
-adaptation. 
+With a view to further specifying the hardware, GIS.lab unit can be
+presented as **Intel Haswell**, **16 GB RAM**, **SSD**, tested with
+**20 clients**, portable, pocket size (11 x 11 x 4 cm) device with
+automatic host network adaptation.
 
 .. _gislab-unit-png:
 
@@ -266,12 +268,12 @@ formats, ``text`` or ``JSON``.
 What is Gisquick?
 =================
 
-`Gisquick <http://gisquick.org>`__ is a **web application** built on
-top of modern technologies with very modern user interface optimized
-also for mobile devices. It stands on the shoulders of `QGIS
-<http://qgis.org>`__ desktop and server software.
-
-The main purpose is QGIS projects publishing on web. 
+`Gisquick <http://gisquick.org>`__ is a separete project which is not
+directly related with GIS.lab. It is a **web application** built on
+top of modern technologies with fully responsive user interface
+optimized also for mobile devices. It stands on the shoulders of `QGIS
+<http://qgis.org>`__ desktop and server components. The main purpose
+of Gisquick is publishing QGIS projects on web.
 
 .. _gisquick-ui:
 
@@ -279,11 +281,14 @@ The main purpose is QGIS projects publishing on web.
    :align: center
    :width: 450
 
-   Gisquick interface.
+   Gisquick web interface.
 
-=================================
+Integration of Gisquick into GIS.lab infrastructure brings a new
+modern web and mobile interfaces.
+   
+==================================
 Is GIS.lab similar to OSGeo Live? 
-=================================
+==================================
 
 GIS.lab is automatic deployment of GIS infrastructure - more or less
 opposite to `OSGeo Live <https://live.osgeo.org>`_.
@@ -294,6 +299,6 @@ variety of free and open source geospatial software without installing
 anything, it is like a Linux distribution.
 
 GIS.lab is a operative system that uses a server where it is installed
-and server clients can attach to it using a LAN. It is easily
+and desktop clients can attach to it using a LAN. It is easily
 configurable and it contains by default some of the most used free and
 open source geospatial software.
