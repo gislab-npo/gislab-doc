@@ -34,7 +34,6 @@ Contents
    client-layout/index
    practice/practice
    general/workshop
-   general/datasets
 
 .. toctree::
    :maxdepth: 1
