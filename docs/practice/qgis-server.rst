@@ -1,5 +1,3 @@
 ===========================
-Gisquick Docker integration
+QGIS Server OWS publication
 ===========================
-
-.. todo:: 

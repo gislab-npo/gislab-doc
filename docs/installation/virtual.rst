@@ -26,7 +26,8 @@ network breakage may be done.
 .. attention:: |att| Please, never change policy to allow all clients
    when connecting to your corporate LAN! It's also recommended in
    this case to use corporate DHCP server (and keep GIS.lab DHCP
-   server disabled).
+   server disabled, see :ref:`network-management` section for
+   details).
 
 If DHCP server on GIS.lab is enabled than own network is created. By
 default it is in range ``192.168.50.0/24``.  If this range already
@@ -173,37 +174,18 @@ running Vagrant machine in source code directory via SSH.
 
 .. _vagrant-login:
 
-Any IP address, username or password are not needed to login via ``SSH``. 
-Just ``vagrant ssh`` command is enough. The only obligation is to be present 
-in the folder where ``Vagrantfile`` is. That file contains all necessary information.
+Any IP address, username or password are not needed to login via SSH.
+Just ``vagrant ssh`` command is enough. The only obligation is to be
+present in the folder where ``Vagrantfile`` is. That file contains all
+necessary information.
 
 .. code:: sh
 
    $ vagrant ssh
 
-.. _user-creation:
-
-New user accounts can be created by using ``gislab-adduser`` command,
-the command below creates ordinary user ``lab1`` with `lab` as
-password.
-
-.. code:: sh 
-
-   $ sudo gislab-adduser -g User -l GIS.lab -m lab1@gis.lab -p lab lab1
-
-.. tip:: |tip| Superuser accounts can be created by ``-s`` flag, see
-   ``gislab-adduser --help`` for more information.  Superuser will be
-   able to perform ``sudo`` operations on client machines.
-      
-With ``gislab-listusers`` list of all GIS.lab users is displayed, see
-example below.
-
-.. code:: sh
-
-   $ sudo gislab-listusers | grep uid:
-   uid: uid=gislab
-   uid: uid=lab1
-
+A new user account can be created by ``gislab-adduser`` administration
+command. See :ref:`user-creation` section for details.
+   
 ======
 Client
 ======
@@ -217,7 +199,7 @@ The process consists of four main steps:
 
 1. :ref:`Virtual machine creation <vm-creation>`
 2. :ref:`Booting <booting-virtual>`
-3. :ref:`Enabling GIS.lab client on GIS.lab server <client-enabling-virtual>`
+3. :ref:`Enabling GIS.lab client on GIS.lab server <client-enabling>`
 4. :ref:`Running virtual GIS.lab client <client-running-virtual>`
 
 .. _schema-virtual-client:
@@ -313,34 +295,15 @@ which network card will go through should be different from current internet
 connection, e.g. in case of ``wlan0``, ``eth0`` should be set as ``Name`` 
 of ``Bridged Adapter``.
 
-.. _client-enabling-virtual:
-
-.. rubric:: Enabling GIS.lab client on GIS.lab server
-
-After virtual client is created, log in to GIS.lab server and with
-``gislab-machines`` administration command allow client machine to
-connect.
-
-.. code:: sh
-
-   $ vagrant ssh
-   $ sudo gislab-machines -a <MAC-address>
+After virtual client is created, log in to GIS.lab server (``vagrant
+ssh``) and with ``gislab-machines`` administration command allow
+client machine to connect, see :ref:`client-enabling` section for details.
 
 .. _gislab-network:
    
 .. important:: |imp| Since GIS.lab version 0.6 DHCP service is
    disabled by default. In order to boot virtual client DHCP service
-   must be running.
-
-   .. code:: sh
-             
-      $ sudo gislab-network start
-
-   To enable DHCP service automatically after booting run:
-
-   .. code:: sh
-             
-      $ sudo gislab-network enable
+   must be running. See :ref:`network-management` section for details.
                
 .. _client-running-virtual:
 

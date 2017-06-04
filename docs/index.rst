@@ -31,8 +31,10 @@ Contents
    :maxdepth: 2
 
    installation/index
+   administration/index
    client-layout/index
-   practice/practice
+   practice/index
+..
    general/workshop
 
 .. toctree::

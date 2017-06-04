@@ -48,33 +48,80 @@ Main panel contains:
 GIS applications
 ----------------
 
-**GRASS GIS**
+GIS.lab comes with a bunch of preinstalled GIS applications and
+services. **QGIS** and **GRASS GIS** are two core components. `QGIS
+<http://qgis.org>`__ is used for GIS project creation, data
+preparation, analysis and publication. `GRASS GIS
+<http://grass.osgeo.org>`__ can be used for complex data analysis and
+manipilation. Due to preinstalled QGIS GRASS plugin GRASS tools can be
+accessed also using QGIS user interface.
 
+.. figure:: ../img/client-layout/client-layout-qgis.png
+   :align: center
+   :width: 450
+
+   QGIS with preinstalled Natural Earth project.
+   
 .. figure:: ../img/client-layout/client-layout-grass.png
    :align: center
    :width: 450
 
    Powerful GRASS GIS in GIS.lab client environment.
 
-**QGIS**
+.. note:: Most of applications are taken from standard Ubuntu
+   repositories for `Xenial distribution
+   <https://packages.ubuntu.com/xenial/>`__. In order to bring
+   up-to-date GIS software also `UbuntuGIS PPA
+   <https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable>`__
+   is used.
 
- * QGIS development support in GIS.lab
+Beside QGIS and GRASS desktop client many other GIS tools are preinstalled.
 
-  To to automatize building and installation of QGIS software from Git source 
-  code, following scripts should be run on client machine.
-  First of them downloads latest QGIS source code and makes install
-  and second script runs QGIS installed from source code.
+**Desktop apps**
 
-  1. ``gislab-dev-qgis-install`` 
-  2. ``gislab-dev-qgis`` 
+* `QGIS <http://qgis.org>`__
+* `GRASS GIS <http://grass.osgeo.org>`__
+* `SAGA <http://www.saga-gis.org>`__
+  
+**Image processing**
 
- * QGIS GIS.lab edition
+* `OTB <https://www.orfeo-toolbox.org/>`__ command line tools and GUI
+* `Monteverdi <https://www.orfeo-toolbox.org/CookBook/Monteverdi.html>`__ GUI
+  
+**Geodatabase**
 
-.. figure:: ../img/installation/gislab-qgis.png
-   :align: center
-   :width: 450
+* PostGIS import/export (`shp2pgsql
+  <http://postgis.net/docs/manual-dev/using_postgis_dbmanagement.html#shp2pgsql_usage>`__
+  and `pgsql2shp
+  <http://postgis.net/docs/manual-dev/using_postgis_dbmanagement.html#idm2168>`__)
+  command line tools including OSM-related `osm2pgsql
+  <https://github.com/openstreetmap/osm2pgsql/blob/master/docs/usage.md>`__
+  and `osm2pgrouting
+  <https://github.com/pgRouting/osm2pgrouting#how-to-use>`__ utilities
+* `SpatiaLite command line
+  <https://www.gaia-gis.it/fossil/spatialite-tools/index>`__ and `GUI
+  tools <https://www.gaia-gis.it/fossil/spatialite_gui/index>`__
 
-   QGIS GIS.lab edition.
+**Libraries**
+
+* `GDAL raster <http://gdal.org/gdal_utilities.html>`__ and `vector
+  <http://gdal.org/ogr_utilities.html>`__ tools, `Proj.4
+  <http://proj4.org/apps/index.html>`__ command line utilities
+
+**GeoPython**
+
+* `Fiona <http://toblerity.org/fiona/manual.html>`__
+* GDAL Python bindings
+* OTB Python bindings
+* `OWSlib <https://geopython.github.io/OWSLib/>`__
+* QGIS Python bindings
+* `Rasterio <https://mapbox.github.io/rasterio/>`__
+* SAGA Python bindings
+* `Shapely <http://toblerity.org/shapely/manual.html>`__
+
+**OSM**
+
+* `JOSM editor <https://josm.openstreetmap.de/>`__
 
 -------------------
 Common applications
@@ -97,7 +144,6 @@ GIS.lab brings a lot of useful applications for basic work.
 **Internet**
 
  * **Firefox Web Browser** - Internet browser
- * **Google Earth** - 3D earth browser from Google
  * **Pidgin Internet Messenger** - GIS.lab chat client
 
 .. figure:: ../img/client-layout/client-layout-chat.png
@@ -140,6 +186,22 @@ Directory layout
 
    Directory layout.
 
+Directory layout consits of traditional folders as :file:`Desktop`,
+:file:`Documents`, :file:`Downloads`, and :file:`Templates`. GIS.lab
+adds :file:`Project` folder dedicated for storing user GIS
+projects. There are also four shared directories:
+
+* :file:`Barrel` - read and write access for all - ideal for quick
+  sharing data, files between clients
+* :file:`Booster` - mounted part of client machine RAM - ideal for
+  quick reading and writing data
+* :file:`Publish` - shared folder dedicated for GIS projects
+  publication, see :doc:`QGIS Server <../practice/qgis-server>` and
+  :doc:`Gisquick publication <../gisquick/publication>` section for
+  details
+* :file:`Repository` - read-only access for normal users - ideal for
+  sharing permanent data
+
 ------
 Logout
 ------
@@ -155,4 +217,6 @@ User must log out to correctly finish work with GIS.lab client by using
 
 .. note:: |note| Client machine shut down is available only from login screen.
 
-.. todo:: |todo| Changes related to **Ubuntu 16.04 Xenial**
+   .. figure:: ../img/client-layout/client-shutdown.png
+      :align: center
+      :width: 450

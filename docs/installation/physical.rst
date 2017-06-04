@@ -312,7 +312,7 @@ step all the work is made by :file:`gislab.yml` file located in
 Now, GIS.lab unit machine is installed with GIS.lab system. Do not
 forget to :ref:`create user accounts <user-creation>` by
 ``gislab-adduser`` command and :ref:`allow client machines
-<client-enabling-physical>` to connect by running ``gislab-machines``
+<client-enabling>` to connect by running ``gislab-machines``
 command.
 
 ======
@@ -349,7 +349,7 @@ Complete process of running GIS.lab client using physical mode, i.e. GIS.lab
 unit consists of three main steps.
 
 1. :ref:`Booting <booting-physical>`
-2. :ref:`Enabling GIS.lab client on GIS.lab server <client-enabling-physical>`
+2. :ref:`Enabling GIS.lab client on GIS.lab server <client-enabling>`
 3. :ref:`Running physical GIS.lab client <client-running-physical>`
 
 .. _schema-physical-client:
@@ -367,6 +367,9 @@ unit consists of three main steps.
 As well as in :ref:`virtual mode <booting-virtual>` it is possible to boot 
 using using :ref:`PXE <pxe-boot-physical>` or :ref:`HTTP <http-boot-physical>` 
 boot.
+
+.. important:: |imp| Client machine must be enabled on master, see
+   :ref:`client-enabling` section for details.
 
 .. _pxe-boot-physical:
 
@@ -446,28 +449,6 @@ to choose correct output device without a partition number.
 
 Insert prepared USB stick into client machine and instruct it to boot
 from it.
-
-.. _client-enabling-physical:
-
-.. rubric:: Enabling GIS.lab client on GIS.lab server
-
-By default, no client machines are allowed to boot from GISlab
-server. To allow client machine, there are similar steps to steps
-described for :ref:`virtual <client-enabling-virtual>` mode. Simply
-run ``gislab-machines`` command on **GIS.lab server** and enable the
-client.
-
-.. code:: sh
-
-   sudo gislab-machines -a <MAC-address>
-
-.. tip:: Good way to collect ``MAC addresses`` of client machines is
-   to plainly let them try to boot and than run following command to
-   get list of denied MAC addresses on GIS.lab server.
-
-   .. code:: sh
-
-      $ sudo grep -e 'DHCPDISCOVER.*no free leases' /var/log/syslog 
 
 .. _client-running-physical:
 
