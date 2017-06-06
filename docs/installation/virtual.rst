@@ -75,6 +75,8 @@ with graphical representation in :num:`#requirementsvirtual`.
       $ vboxmanage --version
       $ vagrant --version
 
+.. _virtual-master-install:
+
 ======
 Master
 ======

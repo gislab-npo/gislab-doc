@@ -2,6 +2,8 @@
 GIS project publication using Gisquick
 ======================================
 
+.. todo:: rewrite...
+          
 GIS.lab projects are created and managed by **QGIS** application, which 
 is a main tool for all geospatial tasks. GIS.lab is containing its
 own version of QGIS, which is improved with bug fixes and features and

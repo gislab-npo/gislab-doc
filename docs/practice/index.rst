@@ -13,22 +13,22 @@ GIS.lab configuration
 
    config
 
-=====================
-Software installation
-=====================
+====================
+Software integration
+====================
 
 .. toctree::
    :maxdepth: 1
               
    install
-   ../gisquick/docker
+   gisquick-docker
 
-================   
-Data publication
-================
+=======================
+GIS project publication
+=======================
 
 .. toctree::
    :maxdepth: 1
    
    qgis-server
-   ../gisquick/publication
+   gisquick-publication

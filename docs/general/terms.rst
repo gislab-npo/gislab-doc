@@ -31,9 +31,9 @@ Useful terms
    machine which runs GIS.lab client system launched from GIS.lab server
 
 *Client's root*
-   concrete directory on GIS.lab server in which GIS.lab client is installed 
+   a directory on GIS.lab server in which GIS.lab client is installed 
    with a special tool named ``debootstrap``; it has almost the same filesystem
-   hierarchy as a standard xubuntu desktop installation with GIS.lab integration
+   hierarchy as a standard Ubuntu desktop installation with GIS.lab integration
    changes - and this is what one can see in running GIS.lab client; from this 
    directory is then created GIS.lab client image which is mounted over network 
    as a `client's root partition` during boot process
@@ -60,7 +60,7 @@ Useful terms
     *Dynamic Host Configuration Protocol* is way how to set host's IP address to 
     automatically assign an IP address to any host on the network upon the request
     (in order for two hosts communicate on the same network using TCP/IP model, 
-    both hosts need to have an unique IP address); GIS.lab has own DHCP server
+    both hosts need to have an unique IP address); GIS.lab can run its own DHCP server
 
 .. figure:: ../img/terms/dhcp.gif
    :align: center
@@ -78,7 +78,7 @@ Useful terms
    *Domain Name System* is a protocol within the set of standards for 
    how computers exchange data on the internet and on many private networks, 
    known as the TCP/IP protocol suite; its basic job is to turn a user-friendly 
-   domain name like ``qgis.com`` into an IP address like ``91.142.249.5`` 
+   domain name like ``qgis.org`` into an IP address like ``91.142.249.5`` 
    that computers use to identify each other on the network; 
    also it is used to don’t have to remember IP addresses, domain names are much 
    easier to remember;
@@ -120,7 +120,7 @@ Useful terms
    GitHub provides graphical interface for private repositories and free accounts
    usually used to host open-source projects
 
-*GDAL/OGR*
+*GDAL*
    *Geospatial Data Abstraction Library* provides access to geospatial data, 
    it is a cross platform **C++** translator used for reading, writing and 
    transforming raster (GDAL) and vector (OGR) data to the calling application 
@@ -163,7 +163,7 @@ Useful terms
 
 *ISO*
    an archive file of an optical disc; image file is a snapshot of the data and 
-   layout of a CD or DVD, saved in ``ISO-9660`` format widely used for storing CD 
+   layout of a CD or DVD, saved in ISO-9660 format widely used for storing CD 
    content; it contains raw dumps of a magnetic disk or of an optical disc
 
 *LAN*
@@ -251,7 +251,7 @@ Useful terms
    and provision these machines *Vagrantfile* with Ruby syntax is used,
    process means **set up** - downloading and installing Vagrant, 
    **configure** - creating a single file with description and 
-   **work** - running ``vagrant up``
+   **work** - running
 
 *Vagrant box*
    the package format for Vagrant environment, it is used to bring up an 

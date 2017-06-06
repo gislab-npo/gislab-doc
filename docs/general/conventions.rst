@@ -74,14 +74,15 @@ Shell commands beginning with :command:`$` (dollar) should be run in command win
       :num:`#some-figure-t`
       :ref:`Conventions <conventions>`
 
-General commands are written as :command:`some command`, guilabel as 
-:guilabel:`Guilabel`, direction through a menu is displayed as 
-:menuselection:`First step --> Second step`, name of file is represented by 
-:file:`file.svg`. For usage of footnotes, see [#name]_, external hyperlinks are 
-represented as `GIS.lab web page <http://web.gislab.io/>`_, for reference to 
-some picture, see figures :num:`#some-figure-t`, 
-:num:`#some-figure-s`, :num:`#some-figure-m` and :num:`#some-figure-l`, 
-for reference to some part of page, see :ref:`Conventions <conventions>`.
+General commands are written as :command:`some command`, guilabel as
+:guilabel:`Guilabel`, direction through a menu is displayed as
+:menuselection:`First step --> Second step`, name of file is
+represented by :file:`file.svg`. For usage of footnotes, see [#name]_,
+external hyperlinks are represented as `GIS.lab web page
+<http://web.gislab.io/>`_, for reference to some picture, see
+:num:`#some-figure-t`, :num:`#some-figure-s`, :num:`#some-figure-m`
+and :num:`#some-figure-l`, for reference to some part of page, see
+:ref:`Conventions <conventions>`.
 
 *Example of useful term*
    description ... 

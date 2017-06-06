@@ -1,14 +1,28 @@
 .. _example-configuration:
 
-=============================
-Example of configuration file
-=============================
+===============================
+ Example of configuration file
+===============================
 
-Example configuration in ``gislab_vagrant`` or ``<name-of-gislab-unit>``
-file is shown below.
+This section shows example of configuration used for GIS.lab master
+provision, see related sections :ref:`virtual
+<virtual-master-install>` and :ref:`physical <unit-installation>`
+installation.
+
+The name of file determines machine name for master. In the case of
+virtual mode, the name of file should be ``gislab_vagrant`` or other
+when more master virtual machines are provisioned. In physical mode,
+the name of file will be probably more generic
+``<name-of-gislab-unit>``, eg. ``gislab-my-organization``. The file
+must be placed in :file:`system/host_vars` directory located in
+GIS.lab code tree. See :ref:`configuration-section` section for
+details.
+
+Let's see practical example of configuration with some changes related
+to GIS.lab network and client keyboards.
 
 .. code-block:: sh
-   :emphasize-lines: 5
+   :emphasize-lines: 5, 17
 
    GISLAB_ADMIN_FIRST_NAME: Ludmila
    GISLAB_ADMIN_SURNAME: Furtkevicova
@@ -36,15 +50,10 @@ file is shown below.
    
    GISLAB_CLIENT_OWS_WORKER_MIN_MEMORY: 4000
 
-Let's see practical example of configuration with 
-some changes related to GIS.lab network and client keyboards in virtual mode.
-Variables ``GISLAB_NETWORK`` and ``GISLAB_CLIENT_KEYBOARDS`` in ``gislab_vagrant``
-file will be different. Results after the successful installation for both cases 
-are in figure :num:`#config-virtual`.
-
-.. tip:: |tip| See :doc:`Installation in Virtual Mode <../installation/virtual>`
-   section for more details about the steps or just use ``vagrant provision``
-   command which is used to install and configure the machine Vagrant is managing .
+Variables ``GISLAB_NETWORK`` and ``GISLAB_CLIENT_KEYBOARDS`` in
+``gislab_vagrant`` file will be different. Results after the
+successful installation for both cases is demonstrated in
+:num:`#config-virtual`.
 
 .. code:: sh
 
@@ -64,10 +73,11 @@ are in figure :num:`#config-virtual`.
 
    Two different results using different Vagrant configuration file.
 
-Fourth number of server's IP address will always be ``5`` and the first client's 
-IP address will always terminate with ``50``. For left case of figure 
-:num:`#config-virtual` these addresses would look like ``192.168.50.5`` and 
-``192.168.50.50``.
+Fourth number of server's IP address will always be ``5``. In our case
+client's IP address terminates with ``50``. For left case of
+:num:`#config-virtual` these addresses would look like
+``192.168.50.5`` and ``192.168.50.50``, for right case
+``192.168.30.5`` and ``192.168.30.50``
 
 .. note:: |note| This information is useful in manual GIS.lab server selection  
           using :ref:`HTTP boot <http-boot-virtual>` when server's IP address is required.

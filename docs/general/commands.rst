@@ -16,7 +16,7 @@ Useful commands
 .. _gislab-client-image:
 
 ``gislab-client-image``
-   builds GIS.lab client image/upgrades GIS.lab system
+   builds new GIS.lab client image
 
 .. _gislab-client-shell:
 
@@ -27,13 +27,13 @@ Useful commands
    sends a custom event through the Serf cluster
 
 ``gislab-cluster event reboot``
-   should reboot all members of cluster
+   reboot all members of cluster
 
 ``gislab-cluster event reboot <hostname>``
-   should reboot particular client machines
+   reboot particular client machines
 
 ``gislab-cluster event shutdown``
-   should shutdown all members of cluster
+   shutdown all members of cluster
 
 ``gislab-cluster leave``
    gracefully leaves the Serf cluster and shuts down 
@@ -59,9 +59,6 @@ Useful commands
 ``gislab-restoreuser``
    restores GIS.lab user account from backup
 
-``git config --get remote.origin.url``
-   retrieves the git remote origin URL of the current repo 
-
 ``nslookup``
    displays information that can be used to diagnose DNS infrastructure, e.g. 
    domain name or IP address, it is available only if 
@@ -75,11 +72,6 @@ Useful commands
 ``shutdown -h now``
    brings the system down; instructs the hardware to stop all CPU functions
    immediately 
-
-``tmux kill-session``
-   destroyes the given session, closing any windows linked to it and no other 
-   sessions, and detaching all clients attached to it; if ``-a`` is given, 
-   all sessions but the specified one is killed
 
 ``vagrant destroy`` 
    stops the running Vagrant machine and destroys all resources that were 

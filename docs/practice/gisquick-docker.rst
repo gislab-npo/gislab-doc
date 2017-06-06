@@ -2,4 +2,4 @@
 Gisquick Docker integration
 ===========================
 
-.. todo:: 
+.. todo:: ...
