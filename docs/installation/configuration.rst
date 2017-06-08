@@ -103,7 +103,15 @@ is required only for installation in :doc:`virtual`.
 
    $ sudo apt-get install vagrant
 
-.. attention:: |att| If running 32-bit host operating system, run following command 
+Also Vagrant `disksize plugin
+<https://github.com/sprotheroe/vagrant-disksize>`__ is required and
+must be installed.
+
+.. code-block:: sh
+
+   $ vagrant plugin install vagrant-disksize
+
+.. note:: |note| If running 32-bit host operating system, run following command
    to download 32-bit Vagrant box from whatever directory.
    
    .. code:: sh
