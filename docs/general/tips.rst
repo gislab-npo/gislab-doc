@@ -10,6 +10,10 @@ Tips and tricks
 Apt Cacher service
 ==================
 
+Apt Cacher service can be useful when installing GIS.lab several times
+in a row. Ubuntu software packages are cached by Apt Cacher service
+which is performed by Vagrant and running as virtual machine.
+
 Vagrant file for Apt Cacher service:
 
 .. code:: sh
@@ -21,7 +25,7 @@ Vagrant file for Apt Cacher service:
 
    VAGRANTFILE_API_VERSION = "2"
    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-     config.vm.box = "precise-canonical"
+     config.vm.box = "xenial-canonical"
 
      config.vm.provider "virtualbox" do |v|
        v.customize ["modifyvm", :id, "--memory", "512"]
@@ -36,8 +40,8 @@ Vagrant file for Apt Cacher service:
      config.vm.network "public_network", ip: "%s.%s" % [GISLAB_NETWORK, "6"]
    end
 
-Run Apt Cacher server by typing ``vagrant up`` and add following line to 
-GIS.lab configuration file:
+Run Apt Cacher server by typing ``vagrant up`` and add following line
+to GIS.lab configuration file:
 
 .. code:: sh
 
@@ -49,19 +53,18 @@ GIS.lab configuration file:
 Executing customization scripts from Ansible
 ============================================
 
-.. todo:: |todo| prejsť!
+Following example will execute the same script first on GIS.lab Server
+and than in GIS.lab client's root. See :file:`gislab-customize.yml`
+Ansible playbook below.
 
-Following example will execute the same script first on GIS.lab Server 
-and than in GIS.lab client's ``root``. See Ansible playbook below.
-
-.. code:: sh
+.. code-block:: yaml
 
    ---
    
    # Example GIS.lab customization playbook.
    
    - hosts: all
-     sudo: yes
+     become: yes
    
      vars:
        SERVER_SCRIPT: gislab-customize.sh
@@ -77,9 +80,12 @@ and than in GIS.lab client's ``root``. See Ansible playbook below.
    
        # Customize GIS.lab Desktop client
        - name: Copy script to client's root
-         copy: src={{ CLIENT_SCRIPT }}
-               dest={{ GISLAB_INSTALL_CLIENTS_ROOT }}/desktop/root/tmp/customize.sh
-               owner=root group=root mode=0755
+         copy:
+           src: "{{ CLIENT_SCRIPT }}"
+           dest: "{{ GISLAB_INSTALL_CLIENTS_ROOT }}/desktop/root/tmp/customize.sh"
+           owner: root
+           group: root
+           mode: 0755
          tags:
            - customize-client
    
@@ -89,8 +95,9 @@ and than in GIS.lab client's ``root``. See Ansible playbook below.
            - customize-client
    
        - name: Remove script from client's root
-         file: path={{ GISLAB_INSTALL_CLIENTS_ROOT }}/desktop/root/tmp/customize.sh
-               state=absent
+         file:
+           path: "{{ GISLAB_INSTALL_CLIENTS_ROOT }}/desktop/root/tmp/customize.sh"
+           state: absent
          tags:
            - customize-client
    
@@ -98,13 +105,14 @@ and than in GIS.lab client's ``root``. See Ansible playbook below.
          shell: gislab-client-image
          tags:
            - customize-client
-           - build-cient-image
+           - build-client-image
    
    # vim:ft=ansible:
 
-Example customization script would be as follows.
+Example customization script :file:`gislab-customize.sh` would be as
+follows.
 
-.. code:: sh
+.. code-block:: sh
 
    #!/bin/bash
    # Example GIS.lab customization script.
@@ -122,9 +130,12 @@ Example customization script would be as follows.
    
    # vim: set ts=4 sts=4 sw=4 noet:
 
-And for running Ansible playbook in Vagrant environment see next example.
+Customization Ansible Playbook can be applied using
+``ansible-playbook`` command from host/controlling machine. In
+:doc:`virtual mode <../installation/virtual>` the command will be as
+follows:
 
-.. code:: sh
+.. code-block:: sh
 
    PYTHONUNBUFFERED=1 \
    ANSIBLE_FORCE_COLOR=true \
@@ -136,68 +147,53 @@ And for running Ansible playbook in Vagrant environment see next example.
    --connection=ssh \
    --limit='gislab_vagrant' \
    --inventory-file=$(pwd)/.vagrant/provisioners/ansible/inventory \
-   --tags customize-server,customize-client,build-cient-image \
+   --tags customize-server,customize-client,build-client-image \
    gislab-customize.yml 
 
+In :doc:`physical mode <../installation/physical>` the Ansible
+playbook will be applied similary as :ref:`core GIS.lab playbooks
+<gislab-yml>`:
+
+.. code:: sh
+
+   $ ansible-playbook --inventory=gislab-unit-fem.inventory --private-key=~/.ssh/id_rsa_gislab_unit gislab-customize.yml 
+     
 .. _cluster-parallel-ssh:
 
 ===================================================
 Running commands on whole cluster with parallel-ssh
 ===================================================
 
-Deploy public ``ssh`` key to GIS.lab user to allow passwordless login.
+Log in to the server and get list of currently running client
+machines. At first SSH key must be generated and authorized.
 
 .. code:: sh
 
-   $ ssh-copy-id -i ~/.ssh/id_rsa.pub  gislab@<GIS.lab server IP>
+   ssh-keygen
+   cat .ssh/id_rsa.pub >> /mnt/home/gislab/.ssh authorized_keys
+   
+.. note:: On virtual server the command must be run as ``sudo``.
 
-Get list of currently running client machines
+   .. code:: sh
+             
+      sudo sh -c 'cat .ssh/id_rsa.pub >> /mnt/home/gislab/.ssh/authorized_keys'
+
+List of alive client machines can be determined by ``gislab-cluster``
+administration command.
 
 .. code:: sh
 
-   $ MACHINES="$(gislab-cluster members -tag role=client -status=alive | awk -F " " '{printf "%s ", $1}')"
+   $ MACHINES="$(sudo gislab-cluster members -tag role=client -status=alive | awk -F " " '{printf "%s ", $1}')"
 
-Install gedit on all client machines
+Install `gedit <https://wiki.gnome.org/Apps/Gedit>`__ on all running
+client machines
 
 .. code:: sh
 
    $ parallel-ssh -O StrictHostKeyChecking=no -i -H "$MACHINES" sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends gedit
 
-   [1] 23:02:57 [SUCCESS] c51
-   Reading package lists...
-   Building dependency tree...
-   Reading state information...
-   The following NEW packages will be installed:
-     gedit
-   0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-   Need to get 0 B/827 kB of archives.
-   After this operation, 2,781 kB of additional disk space will be used.
-   Selecting previously unselected package gedit.
-   (Reading database ... 134642 files and directories currently installed.)
-   Unpacking gedit (from .../gedit_3.4.1-0ubuntu1_amd64.deb) ...
-   Processing triggers for desktop-file-utils ...
-   Setting up gedit (3.4.1-0ubuntu1) ...
-   update-alternatives: using /usr/bin/gedit to provide /usr/bin/gnome-text-editor (gnome-text-editor) in auto mode.
-   Processing triggers for libc-bin ...
-   ldconfig deferred processing now taking place
-   [2] 23:02:57 [SUCCESS] c50
-   Reading package lists...
-   Building dependency tree...
-   Reading state information...
-   The following NEW packages will be installed:
-     gedit
-   0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-   Need to get 0 B/827 kB of archives.
-   After this operation, 2,781 kB of additional disk space will be used.
-   Selecting previously unselected package gedit.
-   (Reading database ... 134642 files and directories currently installed.)
-   Unpacking gedit (from .../gedit_3.4.1-0ubuntu1_amd64.deb) ...
-   Processing triggers for desktop-file-utils ...
-   Setting up gedit (3.4.1-0ubuntu1) ...
-   update-alternatives: using /usr/bin/gedit to provide /usr/bin/gnome-text-editor (gnome-text-editor) in auto mode.
-   Processing triggers for libc-bin ...
-   ldconfig deferred processing now taking place
-
+.. todo:: output
+   
 Perform performance test of parallel write to network share
 
 .. code:: sh
@@ -300,9 +296,9 @@ Following examples shows enabling PXE boot for Dell Precision M4400 Mobile
 Workstation.
 
 Start with machine booting. Press ``F12``, go to ``BIOS Setup``, find
-``Settings``, ``System configuration``, ``Integrated NIC`` and set 
-``Enabled w/PXE``. Then press ``Exit`` button, reboot and boot from 
-**Onboard NIC**.
+``Settings``, ``System configuration``, ``Integrated NIC`` and set
+``Enabled w/PXE``. Then press ``Exit`` button, reboot and boot from
+*Onboard NIC*.
 
 .. _public-events-and-queries:
 
@@ -384,25 +380,28 @@ Connect to running remote desktop session using following command.
 
    HOST=<REMOTE-HOST-NAME> ssh gislab@$HOST "x11vnc -bg -safer -once -nopw -scale 0.9x0.9 -display :0 -allow $(hostname -f)" && vncviewer $HOST
 
+.. todo:: check
+          
 .. _network-configuration:
 
 =====================
 Network configuration
 =====================
 
+.. todo:: ?
+          
 This section tries to collect documentation to some of the most common
 network configurations used for GIS.lab deployment. We assume, that in
-all cases, machines are connected to Ethernet network with ``Gigabit switch`` 
-and at least ``CAT5 e`` Ethernet cables.
+all cases, machines are connected to Ethernet network with Gigabit
+switch and at least *CAT5 e* Ethernet cables.
 
 ------------
 Virtual Mode
 ------------
 
 This part of documentation assumes that GIS.lab server is installed on
-**Linux** laptop in **VirtualBox** virtual machine using **Vagrant**
-as it is documented in :doc:`../installation/virtual` installation
-section.
+*Linux* laptop in *VirtualBox* virtual machine using *Vagrant* as it
+is documented in :doc:`../installation/virtual` installation section.
 
 .. rubric:: Existing LAN with DHCP server
 
