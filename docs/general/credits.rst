@@ -9,10 +9,9 @@ Credits
 -  GEOS - http://geos.osgeo.org/
 -  GRASS GIS - http://grass.osgeo.org/
 -  LTSP - http://www.ltsp.org/
--  Vagrant - http://docs.vagrantup.com/
+-  Vagrant - http://vagrantup.com/
 -  VirtualBox - https://www.virtualbox.org/
--  XUBUNTU Linux - http://xubuntu.org/
--  PgAdmin - http://www.pgadmin.org/
+-  Ubuntu Linux - http://ubuntu.com/
 -  PostGIS - http://postgis.net/
 -  PostgreSQL - http://www.postgresql.org/
 -  QGIS - http://www.qgis.org/
