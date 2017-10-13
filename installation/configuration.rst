@@ -22,7 +22,7 @@ installed.
 
 .. code:: sh
 
-   $ sudo apt-get install git
+   $ sudo apt install git
 
 .. _GL-clone:
 
@@ -54,7 +54,7 @@ commands.
 
 .. code-block:: sh
 
-   $ sudo apt-get install ansible
+   $ sudo apt install ansible
 
 .. attention::
 
@@ -73,10 +73,10 @@ commands.
 
    .. code-block:: sh
 
-      $ sudo apt-get install software-properties-common
+      $ sudo apt install software-properties-common
       $ sudo apt-add-repository ppa:ansible/ansible
-      $ sudo apt-get update
-      $ sudo apt-get install ansible
+      $ sudo apt update
+      $ sudo apt install ansible
    
 .. _vb-installation:
 
@@ -88,7 +88,7 @@ packages. These packages are needed only for installation in
 
 .. code-block:: sh
    
-   $ sudo apt-get install dkms virtualbox
+   $ sudo apt install dkms virtualbox
 
 .. _vagrant-installation:
 
@@ -101,7 +101,7 @@ is required only for installation in :doc:`virtual`.
 
 .. code-block:: sh
 
-   $ sudo apt-get install vagrant
+   $ sudo apt install vagrant
 
 Also Vagrant `disksize plugin
 <https://github.com/sprotheroe/vagrant-disksize>`__ is required and

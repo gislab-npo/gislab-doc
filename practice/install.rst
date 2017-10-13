@@ -42,7 +42,7 @@ is shown below.
    $ geany --version
    geany 1.27 (built on 2016-04-17 with GTK 2.24.30, GLib 2.48.0)
    # uninstall geany
-   $ sudo apt-get remove geany
+   $ sudo apt remove geany
 
 Another example demostrates `Vim editor <http://www.vim.org/>`__
 installation process below.
@@ -53,8 +53,8 @@ installation process below.
    $ dpkg -s vim
    dpkg-query: package 'vim' is not installed and no information is available
    ...
-   $ sudo apt-get update
-   $ sudo apt-get install vim
+   $ sudo apt update
+   $ sudo apt install vim
 
 When all desired changes are done the client's root is exited by
 ``exit`` command.
@@ -91,7 +91,7 @@ Then compilation and installation of GDAL can be executed.
 
 .. code:: sh
 
-   $ apt-get -y install g++ subversion
+   $ apt -y install g++ subversion
    $ cd /tmp
    $ svn checkout https://svn.osgeo.org/gdal/trunk/gdal gdal
    $ cd gdal

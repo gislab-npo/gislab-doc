@@ -36,7 +36,7 @@ Vagrant file for Apt Cacher service:
      end
 
      config.vm.hostname = "apt-cacher"
-     config.vm.provision "shell", inline: "apt-get install apt-cacher-ng"
+     config.vm.provision "shell", inline: "apt install apt-cacher-ng"
      config.vm.network "public_network", ip: "%s.%s" % [GISLAB_NETWORK, "6"]
    end
 
@@ -190,7 +190,7 @@ client machines
 
 .. code:: sh
 
-   $ parallel-ssh -O StrictHostKeyChecking=no -i -H "$MACHINES" sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends gedit
+   $ parallel-ssh -O StrictHostKeyChecking=no -i -H "$MACHINES" sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends gedit
 
 .. todo:: output
    
