@@ -14,7 +14,7 @@ figuration, see :num:`#requirementsphysical`.
 - GIS.lab Unit machine 
 
   - Intel NUC
-  - 16 GB RAM
+  - at least 8GB RAM
   - SSD, 60-480GB
 
 - at least 4 GB RAM on host machine
@@ -73,7 +73,8 @@ automatically obtain :ref:`IP address <ip-address>` from :ref:`DHCP
 server <dhcp-server>`.
 
 In the first step download latest `64-bit PC (AMD64) Server Install
-<http://releases.ubuntu.com/xenial>`_ type of **ISO image**.
+<http://releases.ubuntu.com/xenial>`_ type of **ISO image**
+(ie. ``ubuntu-16.04.X-server-amd64.iso`` file).
 
 .. _generate-ssh:
 
