@@ -187,7 +187,19 @@ necessary information.
 
 A new user account can be created by ``gislab-adduser`` administration
 command. See :ref:`user-creation` section for details.
-   
+
+.. tip:: |tip| Demo user accounts can be easily created from
+   host machine by running
+
+   .. code-block:: bash
+
+      ./utils/demo-create-users.sh 1
+
+   where the argument is number of accounts to be created. The user
+   account starts with `lab` basename. The first user account created by
+   this script is `lab1`. All the created accounts have the same password:
+   `lab`.
+
 ======
 Client
 ======
