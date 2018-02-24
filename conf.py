@@ -16,12 +16,17 @@ import sys
 import os
 import sphinx_rtd_theme
 from datetime import datetime
+from sphinx import version_info
 sys.path.append(os.path.abspath('_extensions'))
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo',
               'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.ifconfig',
 	      'sphinx.ext.autosummary', 'sphinx.ext.graphviz',
-    	      'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'autoimage','numfig']
+	      'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'autoimage']
+if version_info[0] <= 1 and version_info[1] < 6:
+    extensions.append('numfig')
+else:
+    numfig = True
 
 todo_include_todos = True
 file_insertion_enabled = True
