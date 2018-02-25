@@ -33,6 +33,7 @@ Contents
    installation/index
    administration/index
    client-layout/index
+   publication/index
    practice/index
 ..
    general/workshop
@@ -43,7 +44,6 @@ Contents
    general/terms
    general/commands
    general/conventions
-   general/tips
    general/communication
    general/credits
 

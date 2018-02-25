@@ -23,12 +23,11 @@ Software integration
    install
    gisquick-docker
 
-=======================
-GIS project publication
-=======================
+===============
+Tips and tricks
+===============
 
 .. toctree::
    :maxdepth: 1
-   
-   qgis-server
-   gisquick-publication
+              
+   tips
