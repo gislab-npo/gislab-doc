@@ -248,18 +248,22 @@ PXE boot is a default boot mode for GIS.lab clients. It is a simplest
 method to get client up and running, but it may not work if multiple
 DHCP boot servers or GIS.lab servers exists in network.
 
-It is necessary to configure boot order to boot only **from network**,
-enable IO APIC, configure network adapter in bridged mode, make sure
-that ``PCnet-FAST III (Am79C973)`` is selected as the adapter type and
-allow promiscuous mode for all.
+It is necessary to configure in ``System`` tab boot order to boot only
+*from network* and enable *IO APIC*. In ``Network`` tab configure
+network adapter in bridged mode, make sure that *PCnet-FAST III
+(Am79C973)* is selected as the adapter type and allow promiscuous mode
+for all, see :numref:`pxe-vb-settings`.
 
 .. _pxe-vb-settings:
 
-.. figure:: ../img/installation/pxe-vb-settings.png
+.. figure:: ../img/installation/pxe-vb-settings.svg
    :align: center
    :width: 750
 
    Settings in VirtalBox using PXE boot.
+
+Following steps are same as for HTTP mentod, see :ref:`next section
+<vb-settings>` for details.
 
 .. _http-boot-virtual:
 
@@ -286,32 +290,37 @@ list of notable advantages of HTTP boot over PXE:
    (VirtualBox), which is many times faster than network adapter used
    for PXE
 
-Using HTTP boot it is necessary to add virtual :file:`gislab-bootloader.iso` file as 
-virtual CD/DVD, configure boot order to boot only from virtual CD/DVD, enable *IO
-APIC*, configure network adapter in bridged mode, make sure 
-``Paravirtualized Network (virtio-net)`` is selected as the adapter type and allow
-promiscuous mode for all.
+Using HTTP boot it is necessary to add virtual
+:file:`gislab-bootloader.iso` file as virtual CD/DVD (``Storage``
+tab), configure boot order to boot only from virtual CD/DVD, enable
+*IO APIC* (``System`` tab), and in ``Network`` tab to configure
+network adapter in bridged mode, make sure *Paravirtualized Network
+(virtio-net)* is selected as the adapter type and allow promiscuous
+mode for all, see :numref:`http-vb-settings`.
 
 .. _http-vb-settings:
 
-.. figure:: ../img/installation/http-vb-settings.png
+.. figure:: ../img/installation/http-vb-settings.svg
    :align: center
    :width: 750
 
-   Settings in VirtalBox using HTTP boot.
+   Settings in VirtualBox using HTTP boot.
 
-.. important:: |imp| For next steps assigned ``MAC address`` is needed. 
-   See *Network* section in VirtualBox environment and make a note of this 
+.. _vb-settings:   
+
+.. important:: |imp| For next steps assigned *MAC address* is needed. 
+   See ``Network`` section in VirtualBox environment and make a note of this 
    address.
 
-Selection of the network adapter on the host system that traffic to and from 
-which network card will go through should be different from current internet 
-connection, e.g. in case of ``wlan0``, ``eth0`` should be set as ``Name`` 
-of ``Bridged Adapter``.
+Selection of the network adapter on the host system that traffic to
+and from which network card will go through should be different from
+current internet connection, e.g. in case of wifi connection, the
+*eno0* should be set as ``Name`` of *Bridged Adapter*, see
+:numref:`http-vb-settings`.
 
-After virtual client is created, log in to GIS.lab server (``vagrant
-ssh``) and with ``gislab-machines`` administration command allow
-client machine to connect, see :ref:`client-enabling` section for details.
+After virtual client is created, log in to GIS.lab server by ``vagrant
+ssh`` and with ``gislab-machines`` administration command allow client
+machine to connect, see :ref:`client-enabling` section for details.
 
 .. _gislab-network:
    
