@@ -53,7 +53,7 @@ to GIS.lab network and client keyboards.
 Variables ``GISLAB_NETWORK`` and ``GISLAB_CLIENT_KEYBOARDS`` in
 ``gislab_vagrant`` file will be different. Results after the
 successful installation for both cases is demonstrated in
-:num:`#config-virtual`.
+:numref:`config-virtual`.
 
 .. code:: sh
 
@@ -75,7 +75,7 @@ successful installation for both cases is demonstrated in
 
 Fourth number of server's IP address will always be ``5``. In our case
 client's IP address terminates with ``50``. For left case of
-:num:`#config-virtual` these addresses would look like
+:numref:`config-virtual` these addresses would look like
 ``192.168.50.5`` and ``192.168.50.50``, for right case
 ``192.168.30.5`` and ``192.168.30.50``
 

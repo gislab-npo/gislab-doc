@@ -45,7 +45,7 @@ information.
 To run GIS.lab in Virtual mode, there are some hardware and software
 requirements.  Another important point is GIS.lab source code, see
 :ref:`GIS.lab source code download <GL-clone>`.  See information below
-with graphical representation in :num:`#requirementsvirtual`.
+with graphical representation in :numref:`requirementsvirtual`.
 
 *Hardware*
 
@@ -229,7 +229,7 @@ The process consists of four main steps:
 .. rubric:: Virtual machine creation
 
 Machines are created in VirtualBox environment and their creation depends on 
-type of booting, see :num:`#pxe-vb-settings` and :num:`#http-vb-settings`. 
+type of booting, see :numref:`pxe-vb-settings` and :numref:`http-vb-settings`. 
 
 .. _booting-virtual:
 
@@ -393,7 +393,7 @@ used for choosing GIS.lab server to boot.
    |tip| IP address can be found out after typing ``ip a | grep eth0``
    on GIS.lab server after log in by ``vagrant ssh`` command.
 
-In :num:`#client-pxe-logging-in` and :num:`#client-pxe-running` one
+In :numref:`client-pxe-logging-in` and :numref:`client-pxe-running` one
 can see GIS.lab client logging screen and Desktop of running
 virtual GIS.lab client.
 

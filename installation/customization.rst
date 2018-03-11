@@ -43,7 +43,7 @@ customized by special scripts.
    can't contain file extension, see ``man run-parts``. 
 
 Directory :file:`/opt/gislab/custom/accounts` in
-:num:`#customization-files` (located on GIS.lab master node) contains
+:numref:`customization-files` (located on GIS.lab master node) contains
 following directories with customization scripts.
 
 * ``before-add`` - executed before account is created
@@ -150,7 +150,7 @@ Command for client's ``image`` backup is introduced below.
    $ sudo tar cjf /mnt/backup/<root>.tar.bz2 /opt/gislab/system/clients/desktop/root
    $ sudo cp -a /opt/gislab/system/clients/desktop/image /mnt/backup/<image>
 
-See :num:`#backup` for clearer understanding.
+See :numref:`backup` for clearer understanding.
 
 .. _backup:
 
@@ -184,7 +184,7 @@ below.
 
 .. rubric:: Using symbolic links
 
-Violet diagram with blue line color called ``image`` in :num:`#backup`
+Violet diagram with blue line color called ``image`` in :numref:`backup`
 containing :file:`gislab.img` binary file and
 :file:`gislab-desktop.buildstamp` in
 :file:`/opt/gislab/system/clients/desktop` directory can be a
@@ -222,7 +222,7 @@ When one wants to select desired image, following steps from
    $ sudo tar xjf /mnt/backup/root-advanced.tar.bz2 -C /
 
 Then continue with creation of new user prepared for advanced course. See 
-principle in :num:`#image-symlink`.
+principle in :numref:`image-symlink`.
 
 .. _image-symlink:
 

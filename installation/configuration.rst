@@ -136,7 +136,7 @@ range ``192.168.50.0/24`` already exists in LAN to prevent IP conflicts.
 
 Default GIS.lab configuration file named :file:`all` exists in
 :file:`system/group_vars` directory located in GIS.lab source code,
-see :num:`#configuration-files`.  When user decides to adjust it, this
+see :numref:`configuration-files`.  When user decides to adjust it, this
 file should not be modified directly. Instead a custom configuration
 file in :file:`system/host_vars` directory should be created.
 

@@ -7,7 +7,7 @@ Physical Mode
 To run GIS.lab in physical mode, there are some hardware and software requirements. 
 As well as using virtual mode, :ref:`GIS.lab source code <GL-clone>` is needed. 
 Information about requirements can be found below together with graphical 
-figuration, see :num:`#requirementsphysical`. 
+figuration, see :numref:`requirementsphysical`. 
 
 *Hardware*
 
@@ -166,7 +166,7 @@ bellow.
       
 When above process is done, together with ready USB stick attach also
 power supply, HDMI display, keyboard and Ethernet cable into GIS.lab
-unit machine, see :num:`#installation-unit`. Power it on, press
+unit machine, see :numref:`installation-unit`. Power it on, press
 ``F10`` key to run boot manager and select ``Boot from USB``
 option. Then fully automatic installation should start. When finished,
 machine will be turned off. USB stick should then be removed.
@@ -456,7 +456,7 @@ from it.
 .. rubric:: Running physical GIS.lab client
 
 After successful booting, there will be welcome screen with login dialog, see 
-figure :num:`#login-unit`. Creation of user accounts and running GIS.lab clients are 
+figure :numref:`login-unit`. Creation of user accounts and running GIS.lab clients are 
 the same as in virtual mode. Find more details in 
 :ref:`User accounts <user-creation>` and 
 :ref:`Running virtual GIS.lab client <client-running-virtual>` sections. 
