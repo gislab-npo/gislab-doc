@@ -228,6 +228,12 @@ The process consists of four main steps:
 
 .. rubric:: Virtual machine creation
 
+.. figure:: ../img/installation/vb-settings-init.svg
+   :align: center
+   :width: 750
+
+   Initial settings of Virtual Client Machine.
+
 Machines are created in VirtualBox environment and their creation depends on 
 type of booting, see :numref:`pxe-vb-settings` and :numref:`http-vb-settings`. 
 
@@ -260,7 +266,7 @@ for all, see :numref:`pxe-vb-settings`.
    :align: center
    :width: 750
 
-   Settings in VirtalBox using PXE boot.
+   Settings in VirtualBox using PXE boot.
 
 Following steps are same as for HTTP mentod, see :ref:`next section
 <vb-settings>` for details.
