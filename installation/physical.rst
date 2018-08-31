@@ -161,8 +161,8 @@ bellow.
    to host machine as ``/dev/sdf`` device. Your configuration **can be
    different**, please check connected devices by ``dmesg`` command!
    Note that formatting can be also done by ``gparted`` GUI
-   application. For ``isohybrid`` command ``syslinux`` package must be
-   installed.
+   application. For ``isohybrid`` command ``syslinux`` or
+   ``syslinux-utils`` package must be installed.
       
 When above process is done, together with ready USB stick attach also
 power supply, HDMI display, keyboard and Ethernet cable into GIS.lab
