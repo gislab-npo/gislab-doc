@@ -73,8 +73,8 @@ automatically obtain :ref:`IP address <ip-address>` from :ref:`DHCP
 server <dhcp-server>`.
 
 In the first step download latest `64-bit PC (AMD64) Server Install
-<http://releases.ubuntu.com/xenial>`_ type of **ISO image**
-(ie. ``ubuntu-16.04.X-server-amd64.iso`` file).
+<http://cdimage.ubuntu.com/releases/bionic/release>`_ type of **ISO image**
+(ie. ``ubuntu-18.04.X-server-amd64.iso`` file).
 
 .. _generate-ssh:
 
@@ -122,7 +122,7 @@ saved in :file:`tmp` directory, then the script can be run as follows.
 
    sudo ./providers/gislab-unit/gislab-unit-iso.sh -s IT -t Europe/Rome \
    -k ~/.ssh/id_rsa_gislab_unit.pub -w /tmp \
-   -i ~/Downloads/ubuntu-16.04.2-server-amd64.iso
+   -i ~/Downloads/ubuntu-18.04.1-server-amd64.iso
 
 .. important::
 
@@ -152,8 +152,7 @@ bellow.
    
    sudo mkdosfs -n 'GIS.lab Base System' -I /dev/sdf -F 32
    isohybrid /path/to/your/gislab.iso
-   sudo dd if=/path/to/your/gislab.iso of=/dev/sdf bs=4k
-   sudo eject /dev/sdf
+   sudo dd if=/path/to/your/gislab.iso of=/dev/sdf bs=4M conv=fdatasync
 
 .. important::
 
