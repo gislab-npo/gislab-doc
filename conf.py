@@ -20,7 +20,7 @@ from sphinx import version_info
 sys.path.append(os.path.abspath('_extensions'))
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo',
-              'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.ifconfig',
+              'sphinx.ext.coverage', 'sphinx.ext.ifconfig',
 	      'sphinx.ext.autosummary', 'sphinx.ext.graphviz',
 	      'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'autoimage']
 if version_info[0] <= 1 and version_info[1] < 6:
