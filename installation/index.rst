@@ -12,7 +12,7 @@ GIS.lab installation
 
    GIS.lab in action.
 
-GIS.lab version 0.8 runs on top of customized **Ubuntu 16.04 Bionic**
+GIS.lab version 0.8 runs on top of customized **Ubuntu 18.04 Bionic**
 release.
 
 .. toctree::
