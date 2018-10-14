@@ -69,10 +69,10 @@ accessed also using QGIS user interface.
    Powerful GRASS GIS in GIS.lab client environment.
 
 .. note:: Most of applications are taken from standard Ubuntu
-   repositories for `Bionic distribution
-   <https://packages.ubuntu.com/bionic/>`__. Up-to-date GIS software
+   repositories for `Xenial distribution
+   <https://packages.ubuntu.com/xenial/>`__. Up-to-date GIS software
    packages are provided by `GIS.lab PPA
-   <https://launchpad.net/~gislab-npo/+archive/ubuntu/production?field.series_filter=bionic>`__.
+   <https://launchpad.net/~gislab-npo/+archive/ubuntu/production?field.series_filter=xenial>`__.
 
 Beside QGIS and GRASS on desktop client many other GIS tools are
 preinstalled. See list below including version numbers.
