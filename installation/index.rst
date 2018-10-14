@@ -12,6 +12,8 @@ GIS.lab installation
 
    GIS.lab in action.
 
+GIS.lab version 0.8 runs on top of customized **Ubuntu 16.04 Bionic**
+release.
 
 .. toctree::
    :maxdepth: 2

@@ -57,12 +57,6 @@ The process of installation consists of three main steps:
 2. :ref:`GIS.lab initialization <initialization>`
 3. :ref:`GIS.lab unit installation <unit-installation>`
 
-.. note::
-
-   |note| GIS.lab version 0.7 and higher runs on top of **Ubuntu 16.04
-   Xenial** release. Older versions of GIS.lab run on **Ubuntu 12.04
-   Precise**.
-
 .. _basic-os:
 
 .. rubric:: Adjusted operating system installation
