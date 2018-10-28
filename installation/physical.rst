@@ -28,7 +28,7 @@ figuration, see :numref:`requirementsphysical`.
 
 -  host machine running Linux or MAC OSX
 -  Git, see :ref:`Git installation <git-installation>`
--  Ansible 2.0 or higher, see :ref:`Ansible installation <ansible-installation>`
+-  Ansible 2.4 or higher, see :ref:`Ansible installation <ansible-installation>`
 
 .. _requirementsphysical:
 

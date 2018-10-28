@@ -55,7 +55,7 @@ with graphical representation in :numref:`requirementsvirtual`.
 
 -  host machine running Linux or MAC OSX
 -  Git, see :ref:`Git installation <git-installation>`
--  Ansible 2.0 or higher, see :ref:`Ansible installation <ansible-installation>`
+-  Ansible 2.4 or higher, see :ref:`Ansible installation <ansible-installation>`
 -  VirtualBox 4.3 or higher, see :ref:`VirtualBox installation <vb-installation>`
 -  Vagrant 1.9 or higher, see :ref:`Vagrant installation <vagrant-installation>`
 

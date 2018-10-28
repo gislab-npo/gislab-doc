@@ -58,7 +58,7 @@ commands.
 
 .. attention::
 
-    |att| Since version 0.7 GIS.lab requires Ansible version >= 2.
+    |att| Since version 0.8 GIS.lab requires Ansible version >= 2.4.
    
 .. tip::
          
