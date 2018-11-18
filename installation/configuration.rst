@@ -88,7 +88,7 @@ packages. These packages are needed only for installation in
 
 .. code-block:: sh
    
-   $ sudo apt install dkms virtualbox
+   $ sudo apt install dkms virtualbox virtualbox-qt
 
 .. _vagrant-installation:
 
