@@ -111,14 +111,6 @@ must be installed.
 
    $ vagrant plugin install vagrant-disksize
 
-.. note:: |note| If running 32-bit host operating system, run following command
-   to download 32-bit Vagrant box from whatever directory.
-   
-   .. code:: sh
-   
-      $ vagrant box add xenial-canonical \
-      https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-i386-vagrant.box
-
 .. _configuration-section:
 
 =============
