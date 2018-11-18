@@ -111,6 +111,9 @@ must be installed.
 
    $ vagrant plugin install vagrant-disksize
 
+.. tip:: If plugin installation fails, try to install more recent
+   version of Vagrant.
+	 
 .. _configuration-section:
 
 =============
