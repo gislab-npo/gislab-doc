@@ -85,42 +85,42 @@ preinstalled. See list below including version numbers.
   
 **Image processing**
 
-* `OTB <https://www.orfeo-toolbox.org/>`__ 6.0
+* `OTB <https://www.orfeo-toolbox.org/>`__ 6.6
 * `Monteverdi <https://www.orfeo-toolbox.org/CookBook/Monteverdi.html>`__ GUI
   
 **Geodatabase**
 
-* PostGIS 2.4 import/export (`shp2pgsql
+* PostGIS 2.5 import/export (`shp2pgsql
   <http://postgis.net/docs/manual-dev/using_postgis_dbmanagement.html#shp2pgsql_usage>`__
   and `pgsql2shp
   <http://postgis.net/docs/manual-dev/using_postgis_dbmanagement.html#idm2168>`__)
   command line tools including OSM-related `osm2pgsql
-  <https://github.com/openstreetmap/osm2pgsql/blob/master/docs/usage.md>`__ 0.88
+  <https://github.com/openstreetmap/osm2pgsql/blob/master/docs/usage.md>`__
   and `osm2pgrouting
-  <https://github.com/pgRouting/osm2pgrouting#how-to-use>`__ 2.2 utilities
+  <https://github.com/pgRouting/osm2pgrouting#how-to-use>`__ utilities
 * SpatiaLite 4.3 `command line
   <https://www.gaia-gis.it/fossil/spatialite-tools/index>`__ and `GUI
   tools <https://www.gaia-gis.it/fossil/spatialite_gui/index>`__
 
 **Libraries**
 
-* GDAL 2.2 `raster <http://gdal.org/gdal_utilities.html>`__ and `vector
+* GDAL 2.3 `raster <http://gdal.org/gdal_utilities.html>`__ and `vector
   <http://gdal.org/ogr_utilities.html>`__ tools
-* `Proj.4 <http://proj4.org/apps/index.html>`__ 4.9 command line
+* `Proj.4 <http://proj4.org/apps/index.html>`__ 5.2 command line
   utilities
 
 **GeoPython**
 
-* `Fiona <http://toblerity.org/fiona/manual.html>`__ 1.7
-* GDAL 2.2 Python bindings
-* `PyModis <http://www.pymodis.org/>`__ 2.0 
-* OTB 6.0 Python bindings
-* `OWSlib <https://geopython.github.io/OWSLib/>`__ 0.14
+* `Fiona <http://toblerity.org/fiona/manual.html>`__
+* GDAL Python bindings
+* `PyModis <http://www.pymodis.org/>`__
+* OTB Python bindings
+* `OWSlib <https://geopython.github.io/OWSLib/>`__
 * QGIS Python bindings
-* `Rasterio <https://mapbox.github.io/rasterio/>`__ 0.36
-* SAGA 2.3 Python bindings
-* `Shapely <http://toblerity.org/shapely/manual.html>`__ 1.5
-* `Sentinelsat <https://sentinelsat.readthedocs.io/en/stable/>`__ 0.12
+* `Rasterio <https://mapbox.github.io/rasterio/>`__
+* SAGA Python bindings
+* `Shapely <http://toblerity.org/shapely/manual.html>`__
+* `Sentinelsat <https://sentinelsat.readthedocs.io/en/stable/>`__
 
 **OSM**
 
