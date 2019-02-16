@@ -10,6 +10,9 @@ Useful commands
 ``gislab-backupall``
    backups all GIS.lab user accounts
 
+``gislab-backupclient``
+   backups GIS.lab client root and image
+
 ``gislab-backupuser``
    backups GIS.lab user account
 
