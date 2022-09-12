@@ -33,6 +33,7 @@ Following command will grab the *most recent* GIS.lab source code to user system
 .. code:: sh
 
    $ git clone https://github.com/gislab-npo/gislab.git
+   $ git checkout version-0.8
 
 .. note:: |note| Git is not necessary but it is recommended. One can
    get GIS.lab source code also by downloading latest GIS.lab package
