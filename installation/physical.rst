@@ -105,26 +105,30 @@ GIS.lab unit machine.
     -i Ubuntu Server installation ISO image file
     -h display this help
 
+.. important::
+
+   ``gislab-unit-iso.sh`` depends on ``pwgen`` utility. You have to
+   install the ``pwgen`` package before running the command.
+   
 For example, assuming that downloaded original Ubuntu server
 installation ISO image is located in :file:`Downloads` directory, user
-wants to use ``Italian`` official archive mirror, ``Rome`` timezone,
-SSH public key file particularly created for GIS.lab installation is
-located in :file:`.ssh` directory and new adjusted image should be
-saved in :file:`tmp` directory, then the script can be run as follows.
+wants to use ``Italian`` official Ubuntu archive mirror, ``Rome``
+timezone, SSH public key file particularly created for GIS.lab
+installation is located in :file:`.ssh` directory, disk size is set up
+to ``480GB`` (the smallest supported disk size is defined by
+70GB). New adjusted image will be saved in :file:`tmp` directory, then
+the script can be run as follows.
 
 .. code:: sh
 
    sudo ./providers/gislab-unit/gislab-unit-iso.sh -s IT -t Europe/Rome \
-   -k ~/.ssh/id_rsa_gislab_unit.pub -w /tmp \
-   -i ~/Downloads/ubuntu-18.04.1-server-amd64.iso
+   -k ~/.ssh/id_rsa_gislab_unit.pub -w /tmp -d 480 \
+   -i ~/Downloads/ubuntu-18.04.X-server-amd64.iso
 
-.. important::
+.. note::
 
    |imp| The ``gislab-unit-iso.sh`` script must be run with superuser
-   (``sudo``) privileges. The script also assumes that 60GB SSD disk
-   is available on GIS.lab unit machine. Different disk size can be
-   prompted by ``-d`` option. Currently 60, 120, 240, and 480 GB SSD
-   disks are supported.
+   (``sudo``) privileges. 
 
 .. _installation-iso:
 
