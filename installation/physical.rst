@@ -15,7 +15,7 @@ figuration, see :numref:`requirementsphysical`.
 
   - Intel NUC
   - at least 8GB RAM
-  - SSD, 60-480GB
+  - at least 70GB SSD
 
 - at least 4 GB RAM on host machine
 
@@ -66,9 +66,9 @@ system on GIS.lab unit machine. Network is configured to
 automatically obtain :ref:`IP address <ip-address>` from :ref:`DHCP
 server <dhcp-server>`.
 
-In the first step download latest `64-bit PC (AMD64) Server Install
-<http://cdimage.ubuntu.com/releases/bionic/release>`_ type of **ISO image**
-(ie. ``ubuntu-18.04.X-server-amd64.iso`` file).
+In the first step download `64-bit PC (AMD64) Server Install ISO
+image`: `ubuntu-18.04.5-server-amd64.iso
+<https://old-releases.ubuntu.com/releases/18.04.5/ubuntu-18.04.5-server-amd64.iso>`__
 
 .. _generate-ssh:
 
@@ -123,7 +123,7 @@ the script can be run as follows.
 
    sudo ./providers/gislab-unit/gislab-unit-iso.sh -s IT -t Europe/Rome \
    -k ~/.ssh/id_rsa_gislab_unit.pub -w /tmp -d 480 \
-   -i ~/Downloads/ubuntu-18.04.X-server-amd64.iso
+   -i ~/Downloads/ubuntu-18.04.5-server-amd64.iso
 
 .. note::
 
