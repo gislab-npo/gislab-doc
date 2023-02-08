@@ -54,10 +54,7 @@ with graphical representation in :numref:`requirementsvirtual`.
 *Software*
 
 -  host machine running Linux or MAC OSX
--  Git, see :ref:`Git installation <git-installation>`
--  Ansible 2.4 or higher, see :ref:`Ansible installation <ansible-installation>`
--  VirtualBox 4.3 or higher, see :ref:`VirtualBox installation <vb-installation>`
--  Vagrant 1.9 or higher, see :ref:`Vagrant installation <vagrant-installation>`
+-  Install :ref:`software requirements <install_requirements>`
 
 .. _requirementsvirtual:
 
@@ -193,7 +190,7 @@ command. See :ref:`user-creation` section for details.
 
    .. code-block:: bash
 
-      ./utils/demo-create-users.sh 1
+      ./utils/create-demo-users.sh 1
 
    where the argument is number of accounts to be created. The user
    account starts with `lab` basename. The first user account created by
@@ -230,7 +227,7 @@ The process consists of four main steps:
 
 .. figure:: ../img/installation/vb-settings-init.svg
    :align: center
-   :width: 750
+   :width: 650
 
    Initial settings of Virtual Client Machine.
 
@@ -264,7 +261,7 @@ for all, see :numref:`pxe-vb-settings`.
 
 .. figure:: ../img/installation/pxe-vb-settings.svg
    :align: center
-   :width: 750
+   :width: 600
 
    Settings in VirtualBox using PXE boot.
 

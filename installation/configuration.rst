@@ -2,48 +2,28 @@
 How to start
 ************
 
+.. _install_requirements:
+
 ============================
 Installation of requirements
 ============================
 
-.. _git-installation:
-
-.. rubric:: Git installation
-
-By far the easiest way of getting Git installed and ready to use is by using 
-default repositories. This is the fastest method, but the version may 
-be older than the newest version. For GIS.lab version from official repositories 
-should be normally sufficient.
-
-The instructions below are valid for Debian/Ubuntu operating
-systems. At first, ``apt`` package management tools can be used to
-update local package index. Afterwards, Git can be downloaded and
-installed.
-
-.. code:: sh
-
-   $ sudo apt install git
-
-.. _GL-clone:
-
 .. rubric:: GIS.lab source code download
 
-Following command will grab the *most recent* GIS.lab source code to user system.
+Grab the GIS.lab *latest release* from
+`https://github.com/gislab-npo/gislab/releases
+<https://github.com/gislab-npo/gislab/releases>`_ and unpacking it
+into a working directory.
+   
+.. note:: |note| One can get GIS.lab source code also by using
+   Git. The instructions below are valid for Debian/Ubuntu operating
+   systems.
 
-.. code:: sh
+   .. code:: sh
 
-   $ git clone https://github.com/gislab-npo/gislab.git
-
-.. note:: |note| Git is not necessary but it is recommended. One can
-   get GIS.lab source code also by downloading latest GIS.lab package
-   from `https://github.com/gislab-npo/gislab.git
-   <https://github.com/gislab-npo/gislab.git>`_ and unpacking it in
-   working directory.
-
-For production environment it's recommended to grab recent `stable
-version <https://github.com/gislab-npo/gislab/releases>`__ (source
-code) directly from GitHub.
-      
+      $ sudo apt install git  
+      $ git clone https://github.com/gislab-npo/gislab.git
+     
 .. _ansible-installation:
 
 .. rubric:: Ansible installation
@@ -56,10 +36,6 @@ commands.
 
    $ sudo apt install ansible
 
-.. attention::
-
-    |att| Since version 0.8 GIS.lab requires Ansible version >= 2.4.
-   
 .. tip::
          
   |tip| Most recent version of Ansible software can be also installed
@@ -67,7 +43,7 @@ commands.
 
    .. code-block:: sh
 
-      $ sudo pip install ansible
+      $ sudo pip3 install ansible
 
   Or alternatively custom PPA can be used.
 
@@ -77,14 +53,20 @@ commands.
       $ sudo apt-add-repository ppa:ansible/ansible
       $ sudo apt update
       $ sudo apt install ansible
-   
+
+---------------------------------------------
+Installation of requirements for Virtual Mode
+---------------------------------------------
+
+These packages are needed only for installation in :doc:`virtual`.
+
 .. _vb-installation:
 
 .. rubric::  VirtualBox installation
 
 Install Dynamic Kernel Module Support Framework and VirtualBox
-packages. These packages are needed only for installation in
-:doc:`virtual`.
+packages. Alternatively the latest version can be downloaded from
+`virtualbox.org <https://www.virtualbox.org/wiki/Downloads>`__.
 
 .. code-block:: sh
    
@@ -95,9 +77,9 @@ packages. These packages are needed only for installation in
 .. rubric:: Vagrant installation
 
 Installing vagrant package from default repositories should be
-normally sufficient. The latest version can be downloaded from
-`vagrantup.com <http://www.vagrantup.com/downloads.html>`__. Vagrant
-is required only for installation in :doc:`virtual`.
+normally sufficient. Alternatively the latest version can be
+downloaded from `vagrantup.com
+<https://www.vagrantup.com/downloads.html>`__.
 
 .. code-block:: sh
 

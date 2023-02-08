@@ -27,8 +27,7 @@ figuration, see :numref:`requirementsphysical`.
 *Software*
 
 -  host machine running Linux or MAC OSX
--  Git, see :ref:`Git installation <git-installation>`
--  Ansible 2.4 or higher, see :ref:`Ansible installation <ansible-installation>`
+-  Install :ref:`software requirements <install_requirements>`
 
 .. _requirementsphysical:
 
@@ -66,9 +65,8 @@ system on GIS.lab unit machine. Network is configured to
 automatically obtain :ref:`IP address <ip-address>` from :ref:`DHCP
 server <dhcp-server>`.
 
-In the first step download `64-bit PC (AMD64) Server Install ISO
-image`: `ubuntu-18.04.5-server-amd64.iso
-<https://old-releases.ubuntu.com/releases/18.04.5/ubuntu-18.04.5-server-amd64.iso>`__
+In the first step download **Ubuntu Server 22.04 LTS** from
+https://ubuntu.com/download/server
 
 .. _generate-ssh:
 
@@ -123,7 +121,7 @@ the script can be run as follows.
 
    sudo ./providers/gislab-unit/gislab-unit-iso.sh -s IT -t Europe/Rome \
    -k ~/.ssh/id_rsa_gislab_unit.pub -w /tmp -d 480 \
-   -i ~/Downloads/ubuntu-18.04.5-server-amd64.iso
+   -i ~/Downloads/ubuntu-22.04.1-live-server-amd64.iso
 
 .. note::
 
@@ -149,7 +147,6 @@ bellow.
 .. code-block:: sh
    
    sudo mkdosfs -n 'GIS.lab Base System' -I /dev/sdf -F 32
-   isohybrid /path/to/your/gislab.iso
    sudo dd if=/path/to/your/gislab.iso of=/dev/sdf bs=4M conv=fdatasync
 
 .. important::
@@ -158,8 +155,7 @@ bellow.
    to host machine as ``/dev/sdf`` device. Your configuration **can be
    different**, please check connected devices by ``dmesg`` command!
    Note that formatting can be also done by ``gparted`` GUI
-   application. For ``isohybrid`` command ``syslinux`` or
-   ``syslinux-utils`` package must be installed.
+   application. 
       
 When above process is done, together with ready USB stick attach also
 power supply, HDMI display, keyboard and Ethernet cable into GIS.lab
