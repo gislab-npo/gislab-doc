@@ -54,9 +54,9 @@ commands.
       $ sudo apt update
       $ sudo apt install ansible
 
----------------------------------------------
-Installation of requirements for Virtual Mode
----------------------------------------------
+--------------------------------------------------------
+Additional installation of requirements for Virtual Mode
+--------------------------------------------------------
 
 These packages are needed only for installation in :doc:`virtual`.
 

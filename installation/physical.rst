@@ -15,7 +15,7 @@ figuration, see :numref:`requirementsphysical`.
 
   - Intel NUC
   - at least 8GB RAM
-  - at least 70GB SSD
+  - at least 90GB SSD
 
 - at least 4 GB RAM on host machine
 
@@ -93,10 +93,10 @@ GIS.lab unit machine.
    Create GIS.lab base system installation ISO image from Ubuntu Server ISO.
    Script must be executed with superuser privileges.
 
-   OPTIONS
+   OPTIONS   
     -s country code used for choosing closest repository mirror (e.g. SK)
     -t timezone (e.g. Europe/Bratislava)
-    -d disk size in GB (valid options: 60, 120, 240, 480; default: 60)
+    -d disk size in GB
     -a swap size in GB (default: 4)
     -k SSH public key file, which will be used for GIS.lab installation or update
     -w working directory with enough disk space (2.5 x larger than ISO image size)
@@ -146,7 +146,7 @@ bellow.
 
 .. code-block:: sh
    
-   sudo mkdosfs -n 'GIS.lab Base System' -I /dev/sdf -F 32
+   sudo mkdosfs -n 'GISLAB' -I /dev/sdf -F 32
    sudo dd if=/path/to/your/gislab.iso of=/dev/sdf bs=4M conv=fdatasync
 
 .. important::
@@ -160,7 +160,9 @@ bellow.
 When above process is done, together with ready USB stick attach also
 power supply, HDMI display, keyboard and Ethernet cable into GIS.lab
 unit machine, see :numref:`installation-unit`. Power it on, press
-``F10`` key to run boot manager and select ``Boot from USB``
+``F2`` key to enter BIOS and disable ``Secure boot``, save changes and
+exit BIOS by ``F10`` key. When the machine reboots, press ``F10`` key
+to enter boot manager and select ``UEFI: USB, Partition 2``
 option. Then fully automatic installation should start. When finished,
 machine will be turned off. USB stick should then be removed.
 
