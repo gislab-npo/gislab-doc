@@ -65,7 +65,7 @@ system on GIS.lab unit machine. Network is configured to
 automatically obtain :ref:`IP address <ip-address>` from :ref:`DHCP
 server <dhcp-server>`.
 
-In the first step download **Ubuntu Server 22.04 LTS** from
+In the first step download **Ubuntu Server 24.04 LTS** from
 https://ubuntu.com/download/server
 
 .. _generate-ssh:
@@ -121,7 +121,7 @@ the script can be run as follows.
 
    sudo ./providers/gislab-unit/gislab-unit-iso.sh -s IT -t Europe/Rome \
    -k ~/.ssh/id_rsa_gislab_unit.pub -w /tmp -d 480 \
-   -i ~/Downloads/ubuntu-22.04.1-live-server-amd64.iso
+   -i ~/Downloads/ubuntu-24.04.1-live-server-amd64.iso
 
 .. note::
 
