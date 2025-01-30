@@ -190,18 +190,6 @@ to log in to unit from host machine using SSH. That is why SSH key
    network. In other words `IP address` has to be assigned to
    unit. Run ``ip a`` command on the unit to detect this address.
 
-In case unit is not registered automatically, run DHCP client that
-apply for IP address. Then verify working internet connection,
-e.g. with ``ping`` command.
-
-.. code:: sh
-
-   sudo dhclient eth0 -v
-   ping 8.8.8.8
-
-.. tip:: |tip| To restart network use ``sudo /etc/init.d/networking restart``
-   command.
-
 To log in on GIS.lab unit machine via SSH enter on host machine ``ssh
 ubuntu@<ip addr>``
 
